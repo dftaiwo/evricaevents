@@ -1,6 +1,6 @@
 <?php
 class Event extends AppModel {
-        public $recursive = 0;
+//        public $recursive = 0;
 	var $name = 'Event';
 	var $validate = array(
 		'state_id' => array(
@@ -43,6 +43,15 @@ class Event extends AppModel {
 			'fields' => '',
 			'order' => ''
 		)
+	);
+	var $hasOne = array(
+		'EvDate' => array(
+			'className' => 'EventDate',
+			'foreignKey' => 'event_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
 	);
 
 	var $hasMany = array(

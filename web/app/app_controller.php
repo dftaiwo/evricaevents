@@ -4,10 +4,8 @@
  //get_include_path();
 class AppController extends Controller
 {
-    var $helpers= array('Form','Html','Javascript','Time');
-    var $components =array('Email','Auth','Session','RequestHandler');
-
-    var $allowed = array('pages'=>'*');
+    var $helpers= array('Form','Html','Javascript','Time','Session');
+    
     function beforeFilter()
     {
 
@@ -23,5 +21,3 @@ class AppController extends Controller
         
     }
 }
-
-?>

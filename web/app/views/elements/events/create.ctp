@@ -6,12 +6,12 @@
  */
 
 ?>
-<?php echo $this->Form->create('Event',array('url'=> 'createEvent')); ?>
+<?php echo $this->Form->create('Event',array('url'=> isset($eventId)? "editEvent/$eventId" : 'createEvent')); ?>
 
 <?php echo $this->Form->input('name');
       echo $this->Form->input('description',array('type'=> 'textarea'));
-      echo $this->Form->input('EventDate.from_date',array('type'=> 'date'));
-      echo $this->Form->input('EventDate.to_date',array('type'=> 'date'));
+      echo $this->Form->input('EventDate.start_date',array('type'=> 'date'));
+      echo $this->Form->input('EventDate.end_date',array('type'=> 'date'));
       echo $this->Form->input('Category');
       echo $this->Form->input('Tag');
       echo $this->Form->input('is_free',array('type'=>'checkbox','label'=>'Are Participants Required to Pay to Attend?'));
@@ -25,6 +25,7 @@
       echo $this->Form->input('event_company',array('label'=>"Organizer's Name"));
       echo $this->Form->input('event_company_info',array('label'=>"Organizer's Profile",'type'=>'textarea'));
       echo $this->Form->input('total_seats');
+      echo $this->Form->input('event_logo',array('type'=>'file'));
       echo $this->Form->input('active',array('type'=>'checkbox','label'=>'Active?'));
 ?>
 

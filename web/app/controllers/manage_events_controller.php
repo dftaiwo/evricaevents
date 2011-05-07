@@ -37,8 +37,7 @@ class ManageEventsController extends AppController {
             $this->set(compact('states', 'users', 'categories', 'tags','countries'));
             
             if(!empty($this->data)){
-                pr($this->data);
-                exit;
+            
                 $this->data['Event']['user_id']=$this->_userId;
                 $this->Event->create();
                 
@@ -56,11 +55,11 @@ class ManageEventsController extends AppController {
                             'start_date'=>$startDate,
                             'end_date'=>$endDate
                             );
-                        $this->EventDate->create($dateData);
-                        $this->EventDate->save($dateData);
+                        $this->Event->EventDate->create($dateData);
+                        $this->Event->EventDate->save($dateData);
                         
                         $this->Session->setFlash(__('The event has been saved', true));
-                        $this->redirect(array('action' => "advEvent/$eventId"));
+                        $this->redirect(array('action' => "viewEvent/$eventId"));
                 } else {
                         $this->Session->setFlash(__('The event could not be saved. Please, try again.', true));
                 }
@@ -80,6 +79,8 @@ class ManageEventsController extends AppController {
                 $this->Session->setFlash('Unable to find this event!');
                 $this->redirect('index');
             }
+            $this->set('eventInfo',$eventInfo);
+            $this->set('eventId',$eventId);
             return $eventInfo;
         }
         
@@ -88,6 +89,60 @@ class ManageEventsController extends AppController {
             
             $eventInfo = $this->_getEvent($eventId);
             
+            
 	}
+        
+        function viewEvent($eventId=0){
+            
+            
+            $eventInfo = $this->_getEvent($eventId);
+            
+            
+        }
+        
+        
+	function editEvent($eventId=0) {
+             $states = $this->Event->State->find('list');
+            $users = $this->Event->User->find('list');
+            $countries = $this->Event->State->Country->find('list');
+            $categories = $this->Event->Category->find('list');
+            $tags = $this->Event->Tag->find('list');
+            $this->set(compact('states', 'users', 'categories', 'tags','countries','eventId'));
+         
+            $eventInfo = $this->_getEvent($eventId);
+            
+            if(!empty($this->data)){
+                
+                $this->Event->id = $eventId;
+                $this->data['Event']['id'] = $eventId;
+               if ($this->Event->save($this->data)) {
+                    
+                        $startDateData= $this->data['EventDate']['start_date'];
+                        $endDateData= $this->data['EventDate']['end_date'];
+                        
+                        $startDate = "{$startDateData['year']}-{$startDateData['month']}-{$startDateData['day']}";
+                        $endDate = "{$endDateData['year']}-{$endDateData['month']}-{$endDateData['day']}";
+                        
+                        $dateData = array(
+                            'event_id'=>$eventId,
+                            'start_date'=>$startDate,
+                            'end_date'=>$endDate
+                            );
+                        
+                        $this->Event->EventDate->updateDates($eventId,$dateData);
+                        
+                        $this->Session->setFlash(__('The event has been saved', true));
+                        $this->redirect(array('action' => "viewEvent/$eventId"));
+                } else {
+                        $this->Session->setFlash(__('The event could not be saved. Please, try again.', true));
+                }
+                
+                
+            }else{
+                $this->data = $eventInfo;
+                
+            }
+	}
+        
 
 }
