@@ -111,12 +111,14 @@
                 	<fieldset>
                     	<legend><img src="<?php echo $this->Html->url('/img/login_img.png'); ?>" width="170" height="32" border="0"/></legend>
                 	<label>Email Address</label>
-                    <input type="text" name="email" class="input" />
+                    <?php echo $form->text('User.email',array('class'=>'input'));?>
                     <label>Password</label>
-                    <input type="password" name="pword" class="input" />
+                   <?php echo $form->password('User.password',array('class'=>'input'));?>
                     <div class="clear">&nbsp;</div>
                     Forgot Password? <input type="submit" name="submit" class="btt" value="Sign in" />
                     </fieldset>
-                </form>
+                <?php  echo $form->end();?>
 			</div>
 		</div>
+    </div>
+    </div>
