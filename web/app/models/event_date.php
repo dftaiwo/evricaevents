@@ -24,5 +24,22 @@ class EventDate extends AppModel {
 			'order' => ''
 		)
 	);
+        
+        
+        function updateDates($eventId,$dateData){
+            
+            $eventDateId = $this->field('EventDate.id',array('event_id'=>$eventId));
+            if(!$eventDateId ){
+                $dateData['event_id'];
+                $this->create($dateData);
+                $this->save($dateData);
+                return;
+            }
+            
+            
+            $this->id = $eventDateId ;
+            return $this->save($dateData);
+            
+        }
 }
 ?>
