@@ -76,9 +76,9 @@ class DATABASE_CONFIG {
 	var $default = array(
 		'driver' => 'mysql',
 		'persistent' => false,
-		'host' => '192.168.0.108',
-		'login' => 'teamevrica',
-		'password' => 'password',
+		'host' => 'localhost',
+		'login' => 'root',
+		'password' => '',
 		'database' => 'garage48_evrica',
 		'prefix' => '',
 	);
