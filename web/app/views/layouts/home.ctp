@@ -3,12 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Evrica Events :: Events Hub for Africa!</title>
-<link rel="shortcut icon" href="images/favicon.png"/> 
-<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="shortcut icon" href="<?php echo $this->Html->url('/img/favicon.png'); ?>"/>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/styles.css'); ?>" />
 
-<script type="text/javascript" src="<?php echo $this->Html->url('js/jquery.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo $this->Html->url('js/s3Slider.js'); ?>"></script>
-<script type="text/javascript" src="js/s3Slider.js"></script>
+<script type="text/javascript" src="<?php echo $this->Html->url('/js/jquery.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo $this->Html->url('/js/s3Slider.js'); ?>"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#slider1').s3Slider({
