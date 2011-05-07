@@ -6,6 +6,15 @@
 
 ?>
 <h2><?php  __('Event');?></h2>
+<?php
+if($eventInfo['Event']['event_logo_url']){
+
+    echo $this->Html->image("/uploads/logos/{$eventInfo['Event']['event_logo_url']}",array('align'=>'right'));
+    
+
+}
+
+?>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		 <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('State'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
@@ -50,11 +59,6 @@
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Event Url'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $eventInfo['Event']['event_url']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Event Logo Url'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $eventInfo['Event']['event_logo_url']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Event Company'); ?></dt>

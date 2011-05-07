@@ -37,6 +37,34 @@ class ManageEventsController extends AppController {
 
             if ($this->Event->save($this->data)) {
 
+                $file = $this->data['Event']['event_logo'];
+
+                if (!$file['error']) {
+                    $file['name'] = "{$eventId}_logo.jpg";
+                    // set the upload destination folder
+                    $destination = WWW_ROOT . "uploads/logos/";
+
+
+
+                    // upload the image using the upload component
+                    $result = $this->Upload->upload($file, $destination, null, array('type' => 'resizecrop', 'size' => array('180', '240'), 'output' => 'jpg'));
+
+                    if (!$result) {
+                        $photoData  =array('id'=>$eventId, 'event_logo_url'=> $this->Upload->result);
+                        $this->Event->save($photoData);
+                    } else {
+                        // display error
+                        $errors = $this->Upload->errors;
+
+                        // piece together errors
+                        if (is_array($errors)) {
+                            $errors = implode("<br />", $errors);
+                        }
+                        $this->Session->setFlash($errors);
+                    }
+                }
+
+
                 $eventId = $this->Event->id;
                 $startDateData = $this->data['EventDate']['start_date'];
                 $endDateData = $this->data['EventDate']['end_date'];
