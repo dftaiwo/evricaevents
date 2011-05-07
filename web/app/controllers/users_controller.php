@@ -1,7 +1,7 @@
 <?php
 class UsersController extends AppController {
- var $helpers= array('Form','Html','Javascript','Time');
-    var $components =array('Email','Auth');
+ var $helpers= array('Form','Html','Javascript','Time', 'Session');
+    var $components =array('Email','Auth','Session');
 
 	var $name = 'Users';
 
@@ -20,6 +20,7 @@ class UsersController extends AppController {
 
 	function add() {
 		  if(!empty($this->data))
+                         
                 {
             $this->User->create();
             // $this->data['User']['lastlogin'] =date('Y-m-d:h:s:i');
@@ -27,8 +28,10 @@ class UsersController extends AppController {
                     {
                 $this->Session->setFlash('Oops, Password Mismatch!');
                 $this->redirect('/');
+                exit;
                     }
-              $this->data['User']['password'] =$this->Auth->password($this->data['User']['pass']);
+
+                    $this->data['User']['password'] =$this->Auth->password($this->data['User']['passV']);
               
             if($this->User->save($this->data))
                     {
@@ -84,15 +87,21 @@ class UsersController extends AppController {
             
          $this->layout='default';
       $this->pageTitle='User Login ';
-  
 
-     if(!empty($this->data['User']))
-                             {
+Configure::write('debug',2);
+     if(!empty($this->data['User'])){
 
-  		if($this->Auth->user('id'))
+         //$h = $this->Auth->hashPasswords($this->data);
+ //debug($this->data);
+// debug($h);
+// debug($this->Auth->user());
+  		if($this->Auth->user())
 			{
-                    $this->Session->setFlash('Welcome '.$this->Auth->user('username'));
-			  $this->redirect(array('controller'=>'dashboard','action'=>'index'));
+
+                    //   $this->Session->setFlash('Welcome '.$this->Auth->user('email'));
+		//	  $this->redirect(array('controller'=>'dashboard','action'=>'index'));
+                    echo 'a';
+                    exit;
 			}
 
 			
@@ -102,10 +111,14 @@ class UsersController extends AppController {
      {
      if($this->Auth->user('id'))
 			{
-			  $this->redirect(array('controller'=>'dashboard','action'=>'index'));
+         echo 'dsds';
+		//	  $this->redirect(array('controller'=>'dashboard','action'=>'index'));
+         pr('n');
+                    exit;
 			}
 	 
      }
+
 
  }
 
@@ -119,11 +132,17 @@ class UsersController extends AppController {
 
         function beforeFilter()
         {
- // $this->pageTitle="Restricted Area";
-          //$this->Auth->allow('logout','initDB','login','display');
-        //$this->layout='pages';
+ $this->Auth->fields = array(
+        'username' => 'email',
+        'password' => 'password'
+        );
+             
+        $this->Auth->loginAction=array('controller'=>'Users','action'=>'login');
+
+            
         $this->Auth->allow('login','add');
-        $this->Auth->autoRedirect = false;
+        
+
         }
 
 }

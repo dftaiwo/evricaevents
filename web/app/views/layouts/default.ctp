@@ -16,7 +16,8 @@
   
 </head>
 <body>
- 
+    <div><?php  echo $session->flash('auth');?>
+    </div>
     <?php  echo $content_for_layout;?>
  
     <div class="clear">&nbsp;</div>

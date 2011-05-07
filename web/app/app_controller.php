@@ -12,28 +12,15 @@ class AppController extends Controller
     {
 
 
-       $this->Auth->allow('display');
-        $this->Auth->userModel='User';
-        $this->Auth->authorize='actions';
-        $this->Auth->authError='You must login to Access that area.';
-        $this->Auth->logoutRedirect = array('controller' => 'pages', 'action' => 'display');
-     	$this->Auth->actionPath = 'controllers/';
-     	//$this->Auth->userScope = array('User.confirmed' => true);
-     	$this->Auth->allowedActions = array('display','index');
-     	$this->Auth->autoRedirect = false;
-        $this->Auth->loginAction=array('controller'=>'Users','action'=>'login');
 
-
-       //$this->Auth->loginRedirect(array('controller'=>'dashboard','action'=>'index'));
-
-         //$this->Auth->loginRedirect(array('controller'=>'dashboard','action'=>'index'));
-
+ 
         
     }
 
     function  beforeRender()
     {
      //  $this->Auth->allow('*')  ;
+        
     }
 }
 
