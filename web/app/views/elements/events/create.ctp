@@ -8,10 +8,12 @@
 ?>
 <?php echo $this->Form->create('Event',array('type'=>'file', 'url'=> isset($eventId)? "editEvent/$eventId" : 'createEvent')); ?>
 
-<?php echo $this->Form->input('name');
+<?php
+
+      echo $this->Form->input('name');
       echo $this->Form->input('description',array('type'=> 'textarea'));
-      echo $this->Form->input('EventDate.start_date',array('type'=> 'date'));
-      echo $this->Form->input('EventDate.end_date',array('type'=> 'date'));
+      echo $this->Form->input('EventDate.start_date',array('type'=> 'text','id'=>'EventDateStart'));
+      echo $this->Form->input('EventDate.end_date',array('type'=> 'text','id'=>'EventDateEnd'));
       echo $this->Form->input('Category');
       echo $this->Form->input('Tag');
       echo $this->Form->input('is_free',array('type'=>'checkbox','label'=>'Are Participants Required to Pay to Attend?'));
@@ -31,3 +33,10 @@
 
 <?php echo $this->Form->submit('Next!'); ?>
 <?php echo $this->Form->end(); ?>
+
+<script>
+	$(function() {
+		$( "#EventDateStart" ).datepicker("option", "dateFormat", 'yy-mm-dd');
+		$( "#EventDateEnd" ).datepicker("option", "dateFormat", 'yy-mm-dd');
+	});
+	</script>

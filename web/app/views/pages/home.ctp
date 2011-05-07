@@ -115,7 +115,7 @@
                     <label>Password</label>
                     <input type="password" name="pword" class="input" />
                     <div class="clear">&nbsp;</div>
-                    Forgort Password? <input type="submit" name="submit" class="btt" value="Sign in" />
+                    Forgot Password? <input type="submit" name="submit" class="btt" value="Sign in" />
                     </fieldset>
                 </form>
 			</div>
