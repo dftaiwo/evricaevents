@@ -106,7 +106,9 @@ if(!empty($user))
 }
 else
     {
-   //debug($this->Session('user'));
+  // debug($this->Session->read('user.User.email'));
+    $this->redirect('/dashboard/index');
+   
     }
   
 
@@ -118,10 +120,11 @@ else
 
   function logout()
     {
+ $this->Session->delete('user',$user);
 
          $this->Session->setFlash('Logout Successful');
 
-        // $this->redirect($this->Auth->logout());
+         $this->redirect('/');
     }
 
         function beforeFilter()

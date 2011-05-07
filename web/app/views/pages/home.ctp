@@ -107,16 +107,18 @@
 		<div class="rightside">
         	<div class="signup"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('signup','','images/signupII.png',1)"><img src="images/signup.png" alt="Sign Up" name="signup" width="155" height="44" border="0" id="signup" /></a></div>
 			<div class="login">
-				<form name="auth" action="" method="post">
+				<?php  echo $form->create('User', array('action'=>'login'));?>
                 	<fieldset>
                     	<legend><img src="<?php echo $this->Html->url('/img/login_img.png'); ?>" width="170" height="32" border="0"/></legend>
                 	<label>Email Address</label>
-                    <input type="text" name="email" class="input" />
+                    <?php echo $form->text('User.email');?>
                     <label>Password</label>
-                    <input type="password" name="pword" class="input" />
+                   <?php echo $form->password('User.password');?>
                     <div class="clear">&nbsp;</div>
                     Forgort Password? <input type="submit" name="submit" class="btt" value="Sign in" />
                     </fieldset>
-                </form>
+                <?php  echo $form->end();?>
 			</div>
 		</div>
+    </div>
+    </div>
