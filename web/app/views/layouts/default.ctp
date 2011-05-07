@@ -6,6 +6,7 @@
 <link rel="shortcut icon" href="images/favicon.png"/>
 <link rel="shortcut icon" href="<?php echo $this->Html->url('/img/favicon.png'); ?>"/>
 <link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/styles.css'); ?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/superfish.css'); ?>" />
 
 
 <script type="text/javascript" src="<?php echo $this->Html->url('/js/jquery.js'); ?>"></script>
