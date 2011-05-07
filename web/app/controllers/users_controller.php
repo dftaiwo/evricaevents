@@ -86,7 +86,8 @@ $this->set('emailID', $this->data['User']['email']);
          {
 
   $this->Session->setFlash('You have been Sucessfully  Registered, Kindly Check your email and confirm your account!');
-                $this->redirect(array('action'=>'login'));
+                
+  $this->redirect('/');
 
 Configure::write('debug',0);
 exit;
@@ -97,16 +98,14 @@ exit;
             else
                 {
                 $this->Session->setFlash('Email Not sent, please try again later');
-                 $this->redirect(array('action'=>'login'));
-                 Configure::write('debug',0);
-                 exit;
+                  $this->redirect('/');
                 // echo debug($this->data);
                 }
 }
 else
     {
      $this->Session->setFlash('Ooops! , please provide your email,name and message');
-                 Configure::write('debug',0);
+                  $this->redirect('/');
                  exit;
     }
 
