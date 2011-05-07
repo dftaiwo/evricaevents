@@ -19,6 +19,7 @@ class UsersController extends AppController {
 	}
 
 	function add() {
+            $this->layout='default';
 		  if(!empty($this->data))
                          
                 {
