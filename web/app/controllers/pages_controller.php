@@ -47,7 +47,7 @@ class PagesController extends AppController {
  */
 	var$components=array('Session');
         var $helpers = array('Html', 'Session');
-        var $layout = 'home';
+//        var $layout = 'home';
 
 /**
  * This controller does not use a model
