@@ -4,7 +4,7 @@
 		<legend><?php __('Add Category'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
-		echo $this->Form->input('parent_id');
+		echo $this->Form->select('parent_id',$parentCategories,null,array('label'=>'Parent Category'));
 		echo $this->Form->input('Event');
 	?>
 	</fieldset>

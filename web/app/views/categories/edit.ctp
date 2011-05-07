@@ -5,8 +5,7 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
-		echo $this->Form->input('parent_id');
-		echo $this->Form->input('Event');
+                echo $this->Form->select('parent_id',$parentCategories,null,array('label'=>'Parent Category'));		echo $this->Form->input('Event');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
