@@ -20,6 +20,7 @@ class UsersController extends AppController {
 
 	function add() {
             $this->layout='default';
+            $this->Session->delete('user',$user);
 		  if(!empty($this->data))
                          
                 {
@@ -36,9 +37,82 @@ class UsersController extends AppController {
               
             if($this->User->save($this->data))
                     {
-                $this->Session->setFlash('You have been Sucessfully  Registered, Kindly Check your email and confirm your account!');
+
+
+
+
+if(!empty($this->data['User']['email'])&&!empty($this->data['User']['firstname'])&&!empty($this->data['User']['lastname']) &&$this->data['Public']['message']!='Write your message please'&&$this->data['Public']['sender_email']!='Enter your Email'&&$this->data['Public']['sender']!='Enter your Name')
+{
+$topattern='[;|,]';
+$to=$this->data['User']['email'];
+$tomatches=split($topattern, $to);
+//$this->Email->to = $this->data['Undpuser']['email'];
+$this->Email->to = $to;//array('hakimkal@gmail.com');
+//$this->set('ml', $this->Undpuser->find('first',array('conditions'=>array('Undpuser.email'=>$this->Auth->user('email')))));
+
+
+ $bcc='info@evricaevents.com';
+//$bcc='abdulhakim.haliru@leproghrammeen.com';
+
+if(!empty($bcc))
+{
+$pattern='[;|,]';
+$matches=split($pattern, $bcc);
+
+$this->Email->bcc = $matches;//array('hakimkal@gmail.com');
+//$this->set('ml', $this->Undpuser->find('first',array('conditions'=>array('Undpuser.email'=>$this->Auth->user('email')))));
+}
+
+
+ $this->Email->subject = 'Evrica Account  Confirmation Mail';
+ $this->Email->replyTo = 'noreply@evricaevents.com';
+
+$this->layout='default';
+$this->Email->template = 'confirmation';
+
+ $this->Email->sendAs = 'html';
+
+$this->set('emailID', $this->data['User']['email']);
+//$this->set('', $this->data['Public']['sender']);
+
+ $this->set('name', $this->data['User']['firstname']. ' '. $this->data['User']['lastname']);
+  
+
+
+ $this->set('server_name', $_SERVER['SERVER_NAME']);
+
+ //Do not pass any args to send()
+ if($this->Email->send())
+         {
+
+  $this->Session->setFlash('You have been Sucessfully  Registered, Kindly Check your email and confirm your account!');
                 $this->redirect(array('action'=>'login'));
-                    }
+
+Configure::write('debug',0);
+exit;
+
+            }
+
+
+            else
+                {
+                $this->Session->setFlash('Email Not sent, please try again later');
+                 $this->redirect(array('action'=>'login'));
+                 Configure::write('debug',0);
+                 exit;
+                // echo debug($this->data);
+                }
+}
+else
+    {
+     $this->Session->setFlash('Ooops! , please provide your email,name and message');
+                 Configure::write('debug',0);
+                 exit;
+    }
+
+//
+                 //
+                }
                     else
                     {
                                       $this->Session->setFlash('Oops, Unable to create your account!');
