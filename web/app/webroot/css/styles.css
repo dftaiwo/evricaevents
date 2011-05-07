@@ -10,7 +10,7 @@ body {
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:9pt;
 	line-height:1.5em;
-	background:url(../images/bg_img.png) repeat-x;
+	background:url(../img/bg_img.png) repeat-x;
 }
 
 .container{
@@ -37,7 +37,7 @@ body {
 .logo{
 	width:290px;
 	height:100px;
-	background:url(../images/logo.png) no-repeat;
+	background:url(../img/logo.png) no-repeat;
 	float:left;
 	margin-top:15px;
 	margin-left:30px;
@@ -59,7 +59,7 @@ body {
 }
 
 .uppernav{
-	background:#0D87B3 url(../images/nav_img.png) repeat-x;
+	background:#0D87B3 url(../img/nav_img.png) repeat-x;
 	padding:5px;
 	width:95%;
 	font-weight:bold;
@@ -202,6 +202,22 @@ body {
 
 /*folded end*/
 
+
+.rstshow{
+	margin:10px auto;
+	border:2px solid #F2F2F2;
+	width:80%;
+	background:#F2F2F2 url(../img/fieldset_img.png) repeat-x;
+	padding:20px;
+	color:#333;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	border-radius:8p box-shadow:0 0 5px #333;
+    -webkit-box-shadow: 0 0 5px #333;
+	box-shadow: 0 0 5px #333
+}
+
 .leftside{
 	 padding:5px;
 	 height:auto;
@@ -285,7 +301,7 @@ body {
 fieldset{
 	margin-top:10px;
 	border:none;
-	background:#F2F2F2 url(../images/fieldset_img.png) repeat-x;
+	background:#F2F2F2 url(../img/fieldset_img.png) repeat-x;
 	padding:20px;
 	color:#333;
 	font-weight:bold;
@@ -306,6 +322,7 @@ legend{
 label{
 	display:block;
 	padding:5px;
+	font-weight:bold;
 }
 
 .rst{
@@ -484,6 +501,6 @@ label{
 
 .footer{
 	height:200px;
-	background: url(../images/footer.png) repeat-x;
+	background: url(../img/footer.png) repeat-x;
 	
 }
