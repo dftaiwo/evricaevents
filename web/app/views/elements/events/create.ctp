@@ -25,6 +25,7 @@
       echo $this->Form->input('event_company',array('label'=>"Organizer's Name"));
       echo $this->Form->input('event_company_info',array('label'=>"Organizer's Profile",'type'=>'textarea'));
       echo $this->Form->input('total_seats');
+      echo $this->Form->input('event_logo',array('type'=>'file'));
       echo $this->Form->input('active',array('type'=>'checkbox','label'=>'Active?'));
 ?>
 

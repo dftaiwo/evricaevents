@@ -55,11 +55,11 @@ class ManageEventsController extends AppController {
                             'start_date'=>$startDate,
                             'end_date'=>$endDate
                             );
-                        $this->EventDate->create($dateData);
-                        $this->EventDate->save($dateData);
+                        $this->Event->EventDate->create($dateData);
+                        $this->Event->EventDate->save($dateData);
                         
                         $this->Session->setFlash(__('The event has been saved', true));
-                        $this->redirect(array('action' => "advEvent/$eventId"));
+                        $this->redirect(array('action' => "viewEvent/$eventId"));
                 } else {
                         $this->Session->setFlash(__('The event could not be saved. Please, try again.', true));
                 }
@@ -80,6 +80,7 @@ class ManageEventsController extends AppController {
                 $this->redirect('index');
             }
             $this->set('eventInfo',$eventInfo);
+            $this->set('eventId',$eventId);
             return $eventInfo;
         }
         
@@ -90,6 +91,14 @@ class ManageEventsController extends AppController {
             
             
 	}
+        
+        function viewEvent($eventId=0){
+            
+            
+            $eventInfo = $this->_getEvent($eventId);
+            
+            
+        }
         
         
 	function editEvent($eventId=0) {
@@ -123,7 +132,7 @@ class ManageEventsController extends AppController {
                         $this->Event->EventDate->updateDates($eventId,$dateData);
                         
                         $this->Session->setFlash(__('The event has been saved', true));
-                        $this->redirect(array('action' => "advEvent/$eventId"));
+                        $this->redirect(array('action' => "viewEvent/$eventId"));
                 } else {
                         $this->Session->setFlash(__('The event could not be saved. Please, try again.', true));
                 }
