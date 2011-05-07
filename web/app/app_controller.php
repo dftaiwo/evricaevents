@@ -4,7 +4,7 @@
  //get_include_path();
 class AppController extends Controller
 {
-    var $helpers= array('Form','Html','Javascript','Time');
+    
     var $components =array('Email','Session','RequestHandler');
 
     var $allowed = array('pages'=>'*');
