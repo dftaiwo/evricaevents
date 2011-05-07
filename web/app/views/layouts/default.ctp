@@ -78,7 +78,7 @@
 
                     <li><a href="#">Find Events</a></li>
 
-                    <li><a href="#">Services</a>
+                    <!--<li><a href="#">Services</a>
                         <ul>
                             <li><a href="#">Web Development</a></li>
                             <li><a href="#">Web Management</a></li>
@@ -86,7 +86,7 @@
                             <li><a href="#">Graphic Designers</a></li>
                             <li><a href="#">Branding</a></li>
                         </ul>
-                    </li>
+                    </li>-->
 
                     <li><a href="#">FAQ</a></li>
 
@@ -121,7 +121,7 @@
                     <a href="">Home</a>
                     <a href="">About Evrica</a>
                     <a href="">Find Events</a>
-                    <a href="">Services</a>
+                    
                     <a href="">FAQ</a>
                     <a href="">Contact Us</a>
 <?php echo $this->Html->link('Manage Events', "/ManageEvents/index"); ?>
