@@ -5,12 +5,13 @@
 class AppController extends Controller
 {
     var $helpers= array('Form','Html','Javascript','Time');
-    var $components =array('Email','Auth','Session','RequestHandler');
+    var $components =array('Email','Session','RequestHandler');
 
     var $allowed = array('pages'=>'*');
+var $uses=array('User');
+
     function beforeFilter()
     {
-
 
 
  
@@ -19,8 +20,7 @@ class AppController extends Controller
 
     function  beforeRender()
     {
-     //  $this->Auth->allow('*')  ;
-        
+     
     }
 }
 

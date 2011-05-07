@@ -1,7 +1,7 @@
 <?php
 class UsersController extends AppController {
  var $helpers= array('Form','Html','Javascript','Time', 'Session');
-    var $components =array('Email','Auth','Session');
+    var $components =array('Email','Session');
 
 	var $name = 'Users';
 
@@ -31,7 +31,7 @@ class UsersController extends AppController {
                 exit;
                     }
 
-                    $this->data['User']['password'] =$this->Auth->password($this->data['User']['passV']);
+                    $this->data['User']['password'] = md5($this->data['User']['passV']);
               
             if($this->User->save($this->data))
                     {
@@ -85,40 +85,34 @@ class UsersController extends AppController {
         function login()
         {
             
-         $this->layout='default';
+         //$this->layout='default';
       $this->pageTitle='User Login ';
+ 
 
-Configure::write('debug',2);
-     if(!empty($this->data['User'])){
+if(!empty($this->data))
+{
+    $user=$this->User->find('first',array('conditions'=>array('email'=>$this->data['User']['email'],'password'=>md5($this->data['User']['password']))));
+if(!empty($user))
+    {
+    $this->Session->write('user',$user);
+    $this->redirect('/dashboard/index');
+    }
+    else
+        {
+        $this->Session->setFlash('Incorrect credentials');
+        $this->redirect('/');
+        }
 
-         //$h = $this->Auth->hashPasswords($this->data);
- //debug($this->data);
-// debug($h);
-// debug($this->Auth->user());
-  		if($this->Auth->user())
-			{
+}
+else
+    {
+   //debug($this->Session('user'));
+    }
+  
 
-                    //   $this->Session->setFlash('Welcome '.$this->Auth->user('email'));
-		//	  $this->redirect(array('controller'=>'dashboard','action'=>'index'));
-                    echo 'a';
-                    exit;
-			}
 
-			
- }
-
- else
-     {
-     if($this->Auth->user('id'))
-			{
-         echo 'dsds';
-		//	  $this->redirect(array('controller'=>'dashboard','action'=>'index'));
-         pr('n');
-                    exit;
-			}
 	 
-     }
-
+      
 
  }
 
@@ -127,22 +121,12 @@ Configure::write('debug',2);
 
          $this->Session->setFlash('Logout Successful');
 
-         $this->redirect($this->Auth->logout());
+        // $this->redirect($this->Auth->logout());
     }
 
         function beforeFilter()
         {
- $this->Auth->fields = array(
-        'username' => 'email',
-        'password' => 'password'
-        );
-             
-        $this->Auth->loginAction=array('controller'=>'Users','action'=>'login');
-
-            
-        $this->Auth->allow('login','add');
-        
-
+  
         }
 
 }
