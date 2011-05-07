@@ -105,15 +105,15 @@
 		 </div>
 
 		<div class="rightside">
-        	<div class="signup"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('signup','','images/signupII.png',1)"><img src="images/signup.png" alt="Sign Up" name="signup" width="155" height="44" border="0" id="signup" /></a></div>
+        	<div class="signup"><a href="<?php echo $this->Html->url('/users/add')?>" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('signup','',<?php echo $this->Html->url('/img/')?>+'signupII.png',1)"><img src="<?php echo $this->Html->url('/img/')?>signup.png" alt="Sign Up" name="signup" width="155" height="44" border="0" id="signup" /></a></div>
 			<div class="login">
 				<?php  echo $form->create('User', array('action'=>'login'));?>
                 	<fieldset>
                     	<legend><img src="<?php echo $this->Html->url('/img/login_img.png'); ?>" width="170" height="32" border="0"/></legend>
                 	<label>Email Address</label>
-                    <?php echo $form->text('User.email');?>
+                    <?php echo $form->text('User.email',array('class'=>'input'));?>
                     <label>Password</label>
-                   <?php echo $form->password('User.password');?>
+                   <?php echo $form->password('User.password',array('class'=>'input'));?>
                     <div class="clear">&nbsp;</div>
                     Forgort Password? <input type="submit" name="submit" class="btt" value="Sign in" />
                     </fieldset>

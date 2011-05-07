@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import "nivo-slider.css";
 @import "superfish.css";
 
 body {
@@ -11,7 +10,7 @@ body {
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:9pt;
 	line-height:1.5em;
-	background:url(../img/bg_img.png) repeat-x;
+	background:url(../images/bg_img.png) repeat-x;
 }
 
 .container{
@@ -20,7 +19,7 @@ body {
 	max-width:1024px;
 	min-width:900px;
 	height:auto;
-	border:1px solid #eee;
+	border:1px solid #ccc;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
 	border-radius:15px;
@@ -38,7 +37,7 @@ body {
 .logo{
 	width:290px;
 	height:100px;
-	background:url(../img/logo.png) no-repeat;
+	background:url(../images/logo.png) no-repeat;
 	float:left;
 	margin-top:15px;
 	margin-left:30px;
@@ -60,7 +59,7 @@ body {
 }
 
 .uppernav{
-	background:#96c9e0 url(../img/nav_img.png) repeat-x;
+	background:#0D87B3 url(../images/nav_img.png) repeat-x;
 	padding:5px;
 	width:95%;
 	font-weight:bold;
@@ -265,10 +264,28 @@ body {
 	color:#fff;
 }
 
+
+.alignright{
+	width:40%;
+	float:right;
+	padding:5px;
+	margin:20px auto 10px auto;
+}
+.alignright li{
+	padding:5px;
+	border-bottom:1px dotted #09C;
+}
+
+.form{
+	width:50%;
+	margin:10px 0px;
+	float:left;
+}
+
 fieldset{
 	margin-top:10px;
 	border:none;
-	background:#F2F2F2 url(../img/fieldset_img.png) repeat-x;
+	background:#F2F2F2 url(../images/fieldset_img.png) repeat-x;
 	padding:20px;
 	color:#333;
 	font-weight:bold;
@@ -291,6 +308,24 @@ label{
 	padding:5px;
 }
 
+.rst{
+	font-size:11pt;
+	color:#666;
+	background:#fff;
+	border:1px solid #ccc;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	display:block;
+	margin-bottom:5px;
+	padding:8px;
+}
+
+.rst:hover{
+	background:#fbfbfb;
+	border:1px solid #999;
+}
+
 .input{
 	font-size:11pt;
 	color:#666;
@@ -306,7 +341,8 @@ label{
 }
 
 .input:hover{
-	background:#fff;
+	background:#fbfbfb;
+	border:1px solid #999;
 }
 
 .btt{
@@ -318,6 +354,10 @@ label{
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
+}
+
+.btt:hover{
+	background:#2b9cd9;
 }
 
 .ggl{
@@ -420,16 +460,30 @@ label{
 .siteinfo{
 	color:#09C;
 	font-size:8pt;
-	margin-top:120px;
+	margin-top:100px;
+	width:40%;
+	float:left;
 }
+
+.team{
+	margin-top:100px;
+	float:right;
+	width:55%;
+}
+
 .siteinfo a{
 	color:#fff;
 	padding:5px;
 	text-decoration:none;
 }
 
+.inforights{
+	padding:5px;
+	color:#fff;
+}
+
 .footer{
 	height:200px;
-	background: url(../img/footer.png) repeat-x;
+	background: url(../images/footer.png) repeat-x;
 	
 }
