@@ -5,10 +5,14 @@
 <title>Evrica Events :: Events Hub for Africa!</title>
 <link rel="shortcut icon" href="images/favicon.png"/>
 <link rel="shortcut icon" href="<?php echo $this->Html->url('/img/favicon.png'); ?>"/>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/bare.cake.css'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/styles.css'); ?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/ui-lightness/jquery-ui-1.8.12.custom.css'); ?>" />
 
 
-<script type="text/javascript" src="<?php echo $this->Html->url('/js/jquery.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo $this->Html->url('/js/jquery-1.5.1.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo $this->Html->url('/js/jquery-ui-1.8.12.custom.min.js'); ?>"></script>
+<?php if($this->name=='Page'){ ?>
 <script type="text/javascript" src="<?php echo $this->Html->url('/js/s3Slider.js'); ?>"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -16,13 +20,16 @@
             timeOut: 3000
         });
     });
-</script>
-<script type="text/javascript">
+
+
 $(window).load(function() {
 
 	$('#slider').nivoSlider();
 
 });
+</script>
+<?php } ?>
+<script type="text/javascript">
 function MM_swapImgRestore() { //v3.0
   var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
 }
@@ -45,6 +52,7 @@ function MM_swapImage() { //v3.0
    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 }
 </script>
+
 </head>
 <body onload="MM_preloadImages('<?php echo $this->Html->url('/img/signupII.png'); ?>')">
 <div class="container">
@@ -117,6 +125,7 @@ function MM_swapImage() { //v3.0
     <a href="">Services</a>
     <a href="">FAQ</a>
     <a href="">Contact Us</a>
+    <?php echo $this->Html->link('Manage Events',"/ManageEvents/index"); ?>
 
 </div>
 	<div class="team"></div>
