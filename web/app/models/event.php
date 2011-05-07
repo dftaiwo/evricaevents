@@ -1,5 +1,6 @@
 <?php
 class Event extends AppModel {
+        public $recursive = 0;
 	var $name = 'Event';
 	var $validate = array(
 		'state_id' => array(
@@ -12,6 +13,8 @@ class Event extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'name' => 'notEmpty',
+		'description' => 'notEmpty',
 		'user_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -21,7 +24,7 @@ class Event extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
+                    ),
 	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -144,5 +147,21 @@ class Event extends AppModel {
 		)
 	);
 
+        function getUserEvent($userId,$eventId){
+            
+            $conditions = array('user_id'=>$userId,'Event.id'=>$eventId);
+            
+            return $this->find('first',array('conditions'=>$conditions));
+            
+            
+        }
+        function getUserEvents($userId ){
+            
+            $conditions = array('user_id'=>$userId);
+            
+            return $this->find('all',array('conditions'=>$conditions));
+            
+            
+        }
 }
 ?>
