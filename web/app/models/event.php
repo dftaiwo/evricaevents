@@ -156,13 +156,21 @@ class Event extends AppModel {
 		)
 	);
 
-        function getUserEvent($userId,$eventId){
+        function getEvent( $eventId){
             
-            $conditions = array('user_id'=>$userId,'Event.id'=>$eventId);
+            $conditions = array('Event.id'=>$eventId);
             
             return $this->find('first',array('conditions'=>$conditions));
             
             
+        }
+        function getUserEvent($userId,$eventId){
+
+            $conditions = array('user_id'=>$userId,'Event.id'=>$eventId);
+
+            return $this->find('first',array('conditions'=>$conditions));
+
+
         }
         function getUserEvents($userId ){
             
@@ -171,6 +179,13 @@ class Event extends AppModel {
             return $this->find('all',array('conditions'=>$conditions));
             
             
+        }
+
+        function getRandomEvents(){
+
+            return $this->find('all',array('order'=>array('RAND()'),'limit'=>5));
+
+
         }
 }
 ?>

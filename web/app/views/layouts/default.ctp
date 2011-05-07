@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Evrica Events :: Events Hub for Africa!</title>
-        <link rel="shortcut icon" href="images/favicon.png"/>
+        <link rel="shortcut icon" href="<?php echo $this->Html->url('/'); ?>img/favicon.png"/>
         <link rel="shortcut icon" href="<?php echo $this->Html->url('/img/favicon.png'); ?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/bare.cake.css'); ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/styles.css'); ?>" />
@@ -79,13 +79,12 @@
                     <li><a href="#">Find Events</a></li>
 
                     <li><a href="#">Services</a>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">Web Management</a></li>
-                            <li><a href="#">Database Management</a></li>
-                            <li><a href="#">Graphic Designers</a></li>
-                            <li><a href="#">Branding</a></li>
-                        </ul>
+                         <ul>
+                        <li><a href="#">Events Management</a></li>
+                        <li><a href="#">Events Advisory</a></li>
+                        <li><a href="#">Events Advert</a></li>
+                        <li><a href="#">Events Ticketing</a></li>
+                    </ul>
                     </li>
 
                     <li><a href="#">FAQ</a></li>

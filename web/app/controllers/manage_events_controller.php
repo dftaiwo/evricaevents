@@ -11,10 +11,27 @@ class ManageEventsController extends AppController {
     public $name = 'ManageEvents';
     public $helpers = array('Html', 'Form');
     public $uses = array('Event');
-    public $components = array('Upload');
+    public $components = array('Upload','Session');
     public $_userId = 1;
 
+    function  beforeFilter() {
+
+
+        parent::beforeFilter();
+
+        $user  = $this->Session->read('user');
+        if(!$user){
+
+            $this->Session->setFlash("Please login to access this area");
+            $this->redirect('/');
+        }
+        $this->_userId = $user['User']['id'];
+
+    }
+
     function index() {
+
+
 
         $myEvents = $this->Event->getUserEvents($this->_userId);
         $this->set('myEvents', $myEvents);
@@ -36,7 +53,7 @@ class ManageEventsController extends AppController {
             $this->Event->create();
 
             if ($this->Event->save($this->data)) {
-
+                $eventId = $this->Event->id;
                 $file = $this->data['Event']['event_logo'];
 
                 if (!$file['error']) {
@@ -69,13 +86,10 @@ class ManageEventsController extends AppController {
                 $startDateData = $this->data['EventDate']['start_date'];
                 $endDateData = $this->data['EventDate']['end_date'];
 
-                $startDate = "{$startDateData['year']}-{$startDateData['month']}-{$startDateData['day']}";
-                $endDate = "{$endDateData['year']}-{$endDateData['month']}-{$endDateData['day']}";
-
                 $dateData = array(
                     'event_id' => $eventId,
-                    'start_date' => $startDate,
-                    'end_date' => $endDate
+                    'start_date' => $startDateData,
+                    'end_date' => $endDateData
                 );
                 $this->Event->EventDate->create($dateData);
                 $this->Event->EventDate->save($dateData);
@@ -165,10 +179,10 @@ class ManageEventsController extends AppController {
                 $startDate = "{$startDateData['year']}-{$startDateData['month']}-{$startDateData['day']}";
                 $endDate = "{$endDateData['year']}-{$endDateData['month']}-{$endDateData['day']}";
 
-                $dateData = array(
+                 $dateData = array(
                     'event_id' => $eventId,
-                    'start_date' => $startDate,
-                    'end_date' => $endDate
+                    'start_date' => $startDateData,
+                    'end_date' => $endDateData
                 );
 
                 $this->Event->EventDate->updateDates($eventId, $dateData);
@@ -179,7 +193,11 @@ class ManageEventsController extends AppController {
                 $this->Session->setFlash(__('The event could not be saved. Please, try again.', true));
             }
         } else {
+
             $this->data = $eventInfo;
+            
+            $this->data['EventDate'] = $eventInfo['EvDate'];
+            
         }
     }
 

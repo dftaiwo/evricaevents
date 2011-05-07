@@ -66,16 +66,16 @@
         	<div class="ggl"><img src="<?php echo $this->Html->url('/img/google_ads.png'); ?>" /></div>
 			<div class="note blue rounded">
 				<h4><img src="<?php echo $this->Html->url('/img/upcoming.png'); ?>" width="172" height="33" border="0"/></h4>
-                <ul>
+                <ul><?php foreach($events as $event){ ?>
                    	  <li>
                         	<div class="evt">
-                                <div class="evtName">Event &raquo; Garage48</div>
-                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span>
+                                <div class="evtName"><?php echo $this->Html->link($event['Event']['name'],"/evrivents/viewEvent/{$event['Event']['id']}"); ?></div>
+                                <div class="catDate">Category &raquo; ICT <?php echo date('M dS',strtotime($event['EvDate']['start_date'])); ?><?php if($event['EvDate']['start_date']!=$event['EvDate']['end_date']){?> - <?php echo date('dS',strtotime($event['EvDate']['end_date'])); }?>. <span class="readmore">more +</span>
 
                                 </div>
                             </div>
                         </li>
-
+                        <?php } ?>
                         <li>
                         	<div class="evt">
                                 <div class="evtName">Event &raquo; Garage48</div>
