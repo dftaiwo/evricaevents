@@ -10,6 +10,10 @@ class AppController extends Controller
     var $allowed = array('pages'=>'*');
 var $uses=array('User');
 
+
+    var $helpers= array('Form','Html','Javascript','Time','Session');
+    
+ 
     function beforeFilter()
     {
 
@@ -23,5 +27,3 @@ var $uses=array('User');
      
     }
 }
-
-?>

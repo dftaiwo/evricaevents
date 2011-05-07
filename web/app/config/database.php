@@ -79,6 +79,9 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
+ 	/*'login' => 'teamevrica',
+		'password' => 'password',*/
+ 
 		'database' => 'garage48_evrica',
 		'prefix' => '',
 	);
