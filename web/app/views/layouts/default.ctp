@@ -63,7 +63,7 @@ function MM_swapImage() { //v3.0
     <div class="uppernav">
     	<ul class="sf-menu">
 
-					<li><a href="">Home</a></li>
+					<li><a href="<?php echo $this->Html->url('/'); ?>">Home</a></li>
 
 					<li><a href="">About Evrica</a></li>
 
