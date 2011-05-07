@@ -105,7 +105,7 @@
 		 </div>
 
 		<div class="rightside">
-        	<div class="signup"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('signup','','images/signupII.png',1)"><img src="images/signup.png" alt="Sign Up" name="signup" width="155" height="44" border="0" id="signup" /></a></div>
+        	<div class="signup"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('signup','','<?echo $this->Html->url('/img/signupII.png'); ?>',1)"><img src="<?php echo $this->Html->url('/img/signup.png'); ?>" alt="Sign Up" name="signup" width="155" height="44" border="0" id="signup" /></a></div>
 			<div class="login">
 				<form name="auth" action="" method="post">
                 	<fieldset>

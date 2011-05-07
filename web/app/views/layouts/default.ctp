@@ -5,6 +5,7 @@
 <title>Evrica Events :: Events Hub for Africa!</title>
 <link rel="shortcut icon" href="images/favicon.png"/>
 <link rel="shortcut icon" href="<?php echo $this->Html->url('/img/favicon.png'); ?>"/>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/bare.cake.css'); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/styles.css'); ?>" />
 
 
@@ -117,6 +118,7 @@ function MM_swapImage() { //v3.0
     <a href="">Services</a>
     <a href="">FAQ</a>
     <a href="">Contact Us</a>
+    <?php echo $this->Html->link('Manage Events',"/ManageEvents/index"); ?>
 
 </div>
 	<div class="team"></div>

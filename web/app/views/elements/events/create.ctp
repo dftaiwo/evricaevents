@@ -6,7 +6,7 @@
  */
 
 ?>
-<?php echo $this->Form->create('Event',array('url'=> isset($eventId)? "editEvent/$eventId" : 'createEvent')); ?>
+<?php echo $this->Form->create('Event',array('type'=>'file', 'url'=> isset($eventId)? "editEvent/$eventId" : 'createEvent')); ?>
 
 <?php echo $this->Form->input('name');
       echo $this->Form->input('description',array('type'=> 'textarea'));
