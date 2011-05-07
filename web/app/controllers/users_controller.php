@@ -41,7 +41,7 @@ class UsersController extends AppController {
 
 
 
-if(!empty($this->data['User']['email'])&&!empty($this->data['User']['firstname'])&&!empty($this->data['User']['lastname']) &&$this->data['Public']['message']!='Write your message please'&&$this->data['Public']['sender_email']!='Enter your Email'&&$this->data['Public']['sender']!='Enter your Name')
+if(!empty($this->data['User']['email'])&&!empty($this->data['User']['firstname'])&&!empty($this->data['User']['lastname']))
 {
 $topattern='[;|,]';
 $to=$this->data['User']['email'];
