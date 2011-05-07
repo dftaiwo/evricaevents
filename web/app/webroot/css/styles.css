@@ -202,6 +202,22 @@ body {
 
 /*folded end*/
 
+
+.rstshow{
+	margin:10px auto;
+	border:2px solid #F2F2F2;
+	width:80%;
+	background:#F2F2F2 url(../img/fieldset_img.png) repeat-x;
+	padding:20px;
+	color:#333;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	border-radius:8p box-shadow:0 0 5px #333;
+    -webkit-box-shadow: 0 0 5px #333;
+	box-shadow: 0 0 5px #333
+}
+
 .leftside{
 	 padding:5px;
 	 height:auto;
@@ -306,6 +322,7 @@ legend{
 label{
 	display:block;
 	padding:5px;
+	font-weight:bold;
 }
 
 .rst{

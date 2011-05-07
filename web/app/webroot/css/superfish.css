@@ -8,6 +8,7 @@
 .sf-menu {
 	line-height:	1.0;
 }
+
 .sf-menu ul {
 	position:		absolute;
 	top:			-999em;
@@ -80,8 +81,8 @@ ul.sf-menu li li li.sfHover ul {
 }*/
 
 .sf-menu li li a:hover{
-	background:#0D87B3;
-	color:#fbfbfb;
+	background:#fbfbfb;
+	color:#666;
 }
 
 .sf-menu li:hover, .sf-menu li.sfHover,
