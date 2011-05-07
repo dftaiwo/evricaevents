@@ -104,22 +104,17 @@
 
                     <?php echo $content_for_layout; ?>
                 </div>
-            </div>
-            <div class="clear">&nbsp;</div>
-
-
-            <div class="wrap">
-
+            
+                <div class="clear">&nbsp;</div>
                 <div class="clear">&nbsp;</div>
 
-            </div>
-            <div class="clear">&nbsp;</div>
             <div class="clear" style="padding-left:30px;"><img src="<?php echo $this->Html->url('/img'); ?>/garage.jpg" width="150" height="38" />
                 <img src="<?php echo $this->Html->url('/img'); ?>/google.png" width="100" height="35" /> <img src="<?php echo $this->Html->url('/img'); ?>/nokia.jpg" width="100" height="45" /> <img src="<?php echo $this->Html->url('/img'); ?>/blackberry.jpg" width="125" height="26" /></div>
+                <div class="clear">&nbsp;</div>
+                <div class="clear">&nbsp;</div>
+</div>
 
-            <div class="wrap">&nbsp;</div>
 
-        </div>
         <div class="footer">
             <div class="wrapfoot">
                 <div class="siteinfo">
@@ -136,6 +131,6 @@
             </div>
         </div>
         <?php echo $this->element('sql_dump'); ?>
-
+        </div>
     </body>
 </html>
