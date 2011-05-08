@@ -82,6 +82,7 @@ if($eventInfo['Event']['event_logo_url']){
         <ul>
             <li>
                 <?php echo $this->Html->link('Edit Event',"editEvent/$eventId"); ?>
+                <?php echo $this->Html->link('View Participants List',"viewParticipants/$eventId"); ?>
             </li>
         </ul>
     </div>

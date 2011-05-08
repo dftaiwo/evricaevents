@@ -47,6 +47,7 @@ class PagesController extends AppController {
  */
 	var$components=array('Session');
         var $helpers = array('Html', 'Session');
+        var $uses = array('Event');
 //        var $layout = 'home';
 
 /**
@@ -55,7 +56,7 @@ class PagesController extends AppController {
  * @var array
  * @access public
  */
-	var $uses = array();
+//	var $uses = array();
 
 /**
  * Displays a view
@@ -64,6 +65,10 @@ class PagesController extends AppController {
  * @access public
  */
 	function display() {
+
+                $events = $this->Event->getRandomEvents();
+                $this->set('events',$events);
+
 		$path = func_get_args();
 
 		$count = count($path);
@@ -83,5 +88,7 @@ class PagesController extends AppController {
 		}
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path));
+
+                
 	}
 }

@@ -80,6 +80,37 @@ class User extends AppModel {
 
 
 
+        
+        
+        function createGetUser($userData){
+            if(!isset($userData['email'])){
+                return;
+            }
+            
+            $email = $userData['email'];
+            
+            $userInfo = $this->findByEmail($email);
+            
+            if($userInfo){
+                return $userInfo['User']['id'];
+            }
+            
+            $this->create($userData);
+            $this->save($userData);
+            return $this->id;
+            
+            
+            
+            
+        }
+        
+        function getUser($userId){
+            return $this->findById($userId);
+        }
 
 }
+
+
+
+
 ?>

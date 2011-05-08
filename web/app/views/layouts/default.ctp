@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Evrica Events :: Events Hub for Africa!</title>
-        <link rel="shortcut icon" href="images/favicon.png"/>
+        <link rel="shortcut icon" href="<?php echo $this->Html->url('/'); ?>img/favicon.png"/>
         <link rel="shortcut icon" href="<?php echo $this->Html->url('/img/favicon.png'); ?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/bare.cake.css'); ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo $this->Html->url('/css/styles.css'); ?>" />
@@ -53,18 +53,34 @@
                     if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
                 }
         </script>
+            <?php if($_SERVER['HTTP_HOST']!='localhost'){ ?>
+<script type="text/javascript">
 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23196142-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+            <?php } ?>
     </head>
     <body onload="MM_preloadImages('<?php echo $this->Html->url('/img/signupII.png'); ?>')">
         <div class="container">
             <div class="head">
                 <div class="logo">&nbsp;</div>
                 <div  class="sontwk">
+                    <?php echo $this->Form->create('Search',array('url'=>'/Evrivents/search')); ?>
                     <label>
-                        <input type="text" id="txt1" onkeyup="showHint(this.value)" size="30" class="inputs" onfocus="if (this.value=='search events') this.value=''" onblur="if (this.value=='') this.value = 'search events'" value="search events" />
-                        <input name="search" type="button" value="Go!" class="btt"/>
+                        <input name="data[Search][search]" type="text" id="txt1" onkeyup="showHint(this.value)" size="30" class="inputs" onfocus="if (this.value=='search events') this.value=''" onblur="if (this.value=='') this.value = 'search events'" value="search events" />
+                        <input name="search" type="submit" value="Go!" class="btt"/>
 
                     </label>
+                    <?php echo $this->Form->end(); ?>
                     <label>Online Connect</label>
                     <img src="<?php echo $this->Html->url('/img/social_networks.png'); ?>" width="209" height="34" /></div>
                 <div class="clear">&nbsp;</div>
@@ -108,8 +124,14 @@
                 <div class="clear">&nbsp;</div>
                 <div class="clear">&nbsp;</div>
 
-            <div class="clear" style="padding-left:30px;"><img src="<?php echo $this->Html->url('/img'); ?>/garage.jpg" width="150" height="38" />
-                <img src="<?php echo $this->Html->url('/img'); ?>/google.png" width="100" height="35" /> <img src="<?php echo $this->Html->url('/img'); ?>/nokia.jpg" width="100" height="45" /> <img src="<?php echo $this->Html->url('/img'); ?>/blackberry.jpg" width="125" height="26" /></div>
+            <div class="clear" style="padding-left:30px;">
+            
+                <img src="<?php echo $this->Html->url('/img'); ?>/garage.jpg" width="150" height="38" />
+                <img src="<?php echo $this->Html->url('/img'); ?>/google.png" width="100" height="35" /> 
+                <img src="<?php echo $this->Html->url('/img'); ?>/nokia.jpg" width="100" height="45" />
+                <img src="<?php echo $this->Html->url('/img'); ?>/blackberry.jpg" width="125" height="26" />
+            
+            </div>
                 <div class="clear">&nbsp;</div>
                 <div class="clear">&nbsp;</div>
 </div>
@@ -118,14 +140,17 @@
         <div class="footer">
             <div class="wrapfoot">
                 <div class="siteinfo">
-                    <a href="<?php echo $html->url('/');?>">Home</a>
+
+                    <nobr><!--leave this here for now -->
+                      <a href="<?php echo $html->url('/');?>">Home</a>
                     <a href="<?php echo $html->url('/pages/about');?>">About Evrica</a>
                     <a href="">Find Events</a>
                     
                     <a href="">FAQ</a>
                     <a href="">Contact Us</a>
 <?php echo $this->Html->link('Manage Events', "/ManageEvents/index"); ?>
-
+    <div class="inforights">Evrica :: Event Management for Africa &copy; 2011</div>
+                    </nobr>
                 </div>
                 <div class="team"></div>
             </div>
