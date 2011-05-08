@@ -58,25 +58,35 @@
         <img src="<?php echo $html->url('/img');?>/event_country.png" width="200" height="30" alt="Events By Country" />
         <div class="clear">&nbsp;</div>
 <div class="listL">
-			<div class="listL">
-			<a href="">Angola</a>
+			<div class="listLB">
+			<a href="">Angola</a>                                                                                       
 <a href="">Benin</a>
 <a href="">Botswana</a>
 <a href="">Burkina Faso</a>
 <a href="">Burundi</a>
+
 <a href="">Cameroon</a>
 <a href="">Cape Verde</a>
-<a href="">Central African Republic</a>
+
+		  </div>
+		  
+
+
+			<div class="listRs">
+			<a href="">Central African Republic</a>
 <a href="">Chad</a>
-<a href="">Democratic Republic of Congo</a>
+			<a href="">Democratic Republic of Congo</a>
 <a href="">Republic of Congo</a>
 <a href="">Cote d'Ivoire</a>
 <a href="">Djibouti</a>
-		  </div>
-			<div class="listR">
 		<a href="">Egypt</a>
 <a href="">Equatorial Guinea</a>
 <a href="">Eritrea</a>
+
+			</div>
+		  </div>
+		  
+		 <div class="listC">
 <a href="">Ethiopia</a>
 <a href="">Gabon</a>
 <a href="">Gambia</a>
@@ -85,14 +95,12 @@
 <a href="">Guinea Bissau</a>
 <a href="">Kenya</a>
 <a href="">Lesotho</a>
-<a href="">Liberia</a>
-			</div>
 
 		</div>
-
-		<div class="listR">
+		
+		<div class="listRL">
 			<div class="listL">
-				<a href="">Libya</a>
+<a href="">Liberia</a>
 <a href="">Madagascar</a>
 <a href="">Malawi</a>
 <a href="">Mali</a>
@@ -100,20 +108,26 @@
 <a href="">Mauritius</a>
 <a href="">Morocco</a>
 <a href="">Mozambique</a>
+				<a href="">Libya</a>
+
+
 <a href="">Namibia</a>
-<a href="">Niger</a>
+
+
+			</div>
+			<div class="listRn">
+			<a href="">Niger</a>
 <a href="">Nigeria</a>
 <a href="">Reunion</a>
-<a href="">Rwanda</a>
-<a href="">Sao Tome and Principe</a>
-			</div>
-			<div class="listR">
-		<a href="">Senegal</a>
-<a href="">Seychelles</a>
-<a href="">Sierra Leone</a>
+			<a href="">Rwanda</a>
+ <a href="">Seychelles</a>
 <a href="">Somalia</a>
+			<a href="">Sierra Leone</a>
 <a href="">South Africa</a>
-<a href="">South Sudan</a>
+		<a href="">Senegal</a>
+
+			<div style="float:right; width:47%; margin-top:-185px;">
+			<a href="">South Sudan</a>
 <a href="">Sudan</a>
 <a href="">Swaziland</a>
 <a href="">Tanzania</a>
@@ -123,6 +137,7 @@
 <a href="">Zambia</a>
 <a href="">Zimbabwe</a>
 			</div>
+			
 		</div>
 		<div class="clear">&nbsp;</div>
 	  </div>
@@ -155,8 +170,10 @@
                             </div>
                         </li>
                         <?php } ?>
+                        
 
               </ul>
+                                <?php echo $this->Html->link('Browse Events',"/Evrivents"); ?>
 		  </div>
 		</div>
 

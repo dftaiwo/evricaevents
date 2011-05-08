@@ -129,7 +129,7 @@
 
                 <div id="content">
 
-<?php echo $this->Session->flash(); ?>
+            <?php echo $this->Session->flash(); ?>
 
                     <?php echo $content_for_layout; ?>
                 </div>
@@ -149,7 +149,7 @@
                 <div class="clear">&nbsp;</div>
 </div>
 
-
+</div>
         <div class="footer">
             <div class="wrapfoot">
                 <div class="siteinfo">
