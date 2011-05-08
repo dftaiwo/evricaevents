@@ -77,8 +77,8 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'teamevrica',
-		'password' => 'password',
+		'login' => 'root',
+		'password' => '',
  	 
  
 		'database' => 'garage48_evrica',
