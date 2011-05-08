@@ -7,7 +7,7 @@ class EvriventsController extends AppController {
 
     public $name = 'Evrivents';
     public $uses = array('Event','User','Participant');
-
+    public $_userId=0;
 
     function index(){
 
@@ -117,7 +117,7 @@ class EvriventsController extends AppController {
             $this->Email->to = $email;
             $this->Email->subject = "Registered for {$eventInfo['Event']['name']} on Evrica";
             $this->Email->template = 'registered'; 
-            $this->Email->sendAs = 'html';
+            $this->Email->sendAs = 'both';
             $this->Email->send();
 
             
@@ -126,6 +126,15 @@ class EvriventsController extends AppController {
             $this->Session->setFlash("You have been registered for {$eventInfo['Event']['name']}!");
             $this->redirect("registered/$eventId");
             
+        }else{
+            $userAuth = $this->Session->read('user');
+            
+            if($userAuth){
+                $this->data['Participant']['first_name']  =$userAuth['User']['firstname'];
+                $this->data['Participant']['last_name']  =$userAuth['User']['lastname'];
+                $this->data['Participant']['email']  =$userAuth['User']['email'];
+                
+            }
         }
         
         //$this->User->getUserByEmail()
@@ -150,13 +159,7 @@ class EvriventsController extends AppController {
         
     }
 
-
-    
-    function myEvents(){
-        
-        
-        
-    }
+ 
     
     function search(){
         $allEvents = array();

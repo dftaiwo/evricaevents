@@ -20,7 +20,7 @@ class UsersController extends AppController {
 
 	function add() {
             $this->layout='default';
-            $this->Session->delete('user',$user);
+            $this->Session->delete('user');
 		  if(!empty($this->data))
                          
                 {

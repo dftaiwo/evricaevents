@@ -77,6 +77,12 @@ class Participant extends AppModel {
             return $this->id;
             
             
+        } 
+        
+        function getUserEvents($userId){
+            
+            
+            return $this->find('all',array('conditions'=>array('Participant.user_id'=>$userId)));
         }
         
 }

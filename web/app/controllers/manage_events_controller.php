@@ -12,7 +12,7 @@ class ManageEventsController extends AppController {
     public $helpers = array('Html', 'Form');
     public $uses = array('Event');
     public $components = array('Upload','Session');
-    public $_userId = 1;
+    public $_userId = 0;
 
     function  beforeFilter() {
 
@@ -23,9 +23,12 @@ class ManageEventsController extends AppController {
         if(!$user){
 
             $this->Session->setFlash("Please login to access this area");
-            $this->redirect('/');
+            
+            $this->redirect('/users/add');        
+            
         }
-        $this->_userId = $user['User']['id'];
+            
+            $this->_userId = $user['User']['id'];
 
     }
 
