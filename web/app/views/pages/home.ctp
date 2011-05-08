@@ -6,7 +6,10 @@
 
 ?>
   <div class="abtev">
-        	<p class="dropcap">W<strong>hy Evrica?</strong> <img src="<?php echo $this->Html->url('/img/img_index.jpg'); ?>" width="130" height="159" class="image_right"/> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<span class="readmore"> more + </span> </p>
+        	<p class="dropcap">W<strong>hy Evrica? <br/></strong> <img src="<?php echo $this->Html->url('/img/img_index.jpg'); ?>" width="130" height="159" class="image_right"/> is an online event Management hub for africa and events  around africa.<br/>
+
+                    Evrica helps to reduce time and expense required to manage events such as conferences, competitions, trade shows, training seminars, travel, press tours and customer briefings,  events publicity and  participation management.
+                    <span class="readmore"> more + </span> </p>
 
     </div>
    	<div class="slideshow">
@@ -16,23 +19,29 @@
 			<a href=""><img src="<?php echo $this->Html->url('/img/img1.jpg'); ?>" alt="1" /></a>
 			<span class="left"><strong><h4>My Evrica</h4></strong>
             <p>
-            	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            This tool helps you create your event, track and manage event(s) variables like ticketing, seats/slots and participants etc.
             </p>
             </span>
             </li>
 		<li class="slider1Image">
 			<a href=""><img src="<?php echo $this->Html->url('/img/img2.jpg'); ?>" alt="2" /></a>
 			<span class="right"><strong><h4>Strategy in Delivery</h4></strong>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></span></li>
+            <p>
+               The Evrica Strategy is to create a platform where you can freely create your event and provide details of timing, speakers, location in africa,publicise your event wall, and a one-off publicity on your social media network(s) wall (s).
+            </p></span></li>
 		<li class="slider1Image">
 			<img src="<?php echo $this->Html->url('/img/img3.jpg'); ?>">
 			<span class="left"><strong><h4>We Cover Africa</h4></strong>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></span>
+            <p>
+               Evrica is indeed a pilot test project (startup) and we do intend to cover africa and provide a genuine hub where you follow events happening across industries and organizations in and around Africa
+            </p></span>
         </li>
          <li class="slider1Image">
 			<img src="<?php echo $this->Html->url('/img/img4.jpg'); ?>">
 			<span class="left"><strong>Dedicated to you</strong>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></span>
+            <p>
+                Our Commitment to you is unparalleled.
+            </p></span>
         </li>
 		<div class="clear slider1Image"></div>
 		</ul>
