@@ -58,5 +58,26 @@ class Participant extends AppModel {
 			'order' => ''
 		)
 	);
+        
+        
+        function addParticipant($eventId,$userId,$seatTypeId=1){
+            
+            $conditions = array('event_id'=>$eventId,'user_id'=>$userId);
+            
+            if($this->field('id',$conditions)){
+                return true;
+            }
+            
+            $data = array('event_id'=>$eventId,'user_id'=>$userId,'event_seat_id'=>$seatTypeId);
+            
+            $this->create($data);
+            
+            $this->save($data);
+            
+            return $this->id;
+            
+            
+        }
+        
 }
 ?>

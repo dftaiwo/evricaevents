@@ -2,6 +2,7 @@
 class Event extends AppModel {
 //        public $recursive = 0;
 	var $name = 'Event';
+        var $actsAs = array('Sluggable'=>array('slug'=>'event_slug','overwrite'=>true));
 	var $validate = array(
 		'state_id' => array(
 			'numeric' => array(

@@ -102,7 +102,7 @@ class ManageEventsController extends AppController {
         }
     }
 
-    function _getEvent($eventId=0) {
+    function _getEvent($eventId) {
 
 
         $eventInfo = $this->Event->getUserEvent($this->_userId, $eventId);
@@ -199,6 +199,20 @@ class ManageEventsController extends AppController {
             $this->data['EventDate'] = $eventInfo['EvDate'];
             
         }
+    }
+    
+    function viewParticipants($eventId=0){
+        
+        $eventInfo = $this->_getEvent($eventId);
+
+        $conditions = array('Participant.event_id'=>$eventId);
+        $this->paginate['Participant']['conditions'] = $conditions;
+        
+        $participants = $this->paginate('Participant');
+        
+        $this->set('participants',$participants);
+        
+        
     }
 
 }

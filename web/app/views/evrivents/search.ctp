@@ -1,22 +1,23 @@
-$ <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+<?php
+
+/**
+ * Created by Femi TAIWO
+ * dftaiwo@gmail.com
  */
-
+?> 
+<?php 
+    echo $this->Form->create('Search',array('url'=>'search')); 
+    echo $this->Form->input('search');
+    echo $this->Form->end(); 
 ?>
-<div class="wrap">
-
 <div class="alleventL">
-    <img src="<?php echo $this->Html->url('/img'); ?>/all_events.png" width="161" height="40" alt="All Events" />
     <ul>
         <?php foreach($allEvents as $event){ 
             
         ?>
         
         <li>
-            <div class="eventtitle"><?php echo $this->Html->link($event['Event']['name'],"viewEvent/{$event['Event']['id']}"); ?></div>
-        <div class="eventcontent">
+       <div class="eventtitle"><?php echo $this->Html->link($event['Event']['name'],"viewEvent/{$event['Event']['id']}"); ?></div> <div class="eventcontent">
             <?php if($event['Event']['event_logo_url']){ ?>
          <div class="imgevt">
        	  <?php echo $this->Html->image("/uploads/logos/{$event['Event']['event_logo_url']}",array('align'=>'right','height'=>80)); ?>
@@ -28,7 +29,7 @@ $ <?php
                 <div class="publish">
                 	Published by &raquo; <?php echo $event['User']['firstname'].' '.$event['User']['lastname']; ?>
                     <label> Date &raquo; <?php echo date('M dS',strtotime($event['EvDate']['start_date'])); ?> <?php if($event['EvDate']['start_date']!=$event['EvDate']['end_date']){?> - <?php echo date('dS',strtotime($event['EvDate']['end_date'])); }?></label>
-                    <div class="readmore">more +</div>
+                    <div class="readmore"><?php echo $this->Html->link('more +',"viewEvent/{$event['Event']['id']}"); ?></div>
                 </div>
 
         </div>
@@ -42,12 +43,8 @@ $ <?php
 </div>
 <div class="alleventA">
     	<div class="note blue rounded">
-   	    <img src="<?php echo $this->Html->url('/img'); ?>/achived.png" width="200" height="36" alt="Archieved" />
              <ul>
-            <li>Last Week</li>
-            <li>This Week</li>
-            <li>Next Week</li>
-            <li>Next Month</li>
+            <li></li>
         </ul>
         </div>
 

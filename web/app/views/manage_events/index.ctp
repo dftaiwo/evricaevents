@@ -19,6 +19,7 @@ if($myEvents){
         <?php echo $this->Html->link($myEvent['Event']['name'],"viewEvent/{$myEvent['Event']['id']}"); ?>
         <?php echo $this->Html->link('Edit',"editEvent/{$myEvent['Event']['id']}"); ?>
         <?php echo $this->Html->link('Advanced Settings',"advEvent/{$myEvent['Event']['id']}"); ?>
+        <?php echo $this->Html->link('View Participants List',"viewParticipants/{$myEvent['Event']['id']}"); ?>
     </li>
         <?php
 
