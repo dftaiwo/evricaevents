@@ -64,7 +64,7 @@ class ManageEventsController extends AppController {
 
 
                     // upload the image using the upload component
-                    $result = $this->Upload->upload($file, $destination, null, array('type' => 'resizecrop', 'size' => array('180', '240'), 'output' => 'jpg'));
+                    $result = $this->Upload->upload($file, $destination, null, array('type' => 'resizecrop', 'size' => array('300', '400'), 'output' => 'jpg'));
 
                     if (!$result) {
                         $photoData  =array('id'=>$eventId, 'event_logo_url'=> $this->Upload->result);
@@ -153,7 +153,7 @@ class ManageEventsController extends AppController {
 
 
                 // upload the image using the upload component
-                $result = $this->Upload->upload($file, $destination, null, array('type' => 'resizecrop', 'size' => array('180', '240'), 'output' => 'jpg'));
+                $result = $this->Upload->upload($file, $destination, null, array('type' => 'resizecrop', 'size' => array('300', '400'), 'output' => 'jpg'));
 
                 if (!$result) {
                     $this->data['Event']['event_logo_url'] = $this->Upload->result;
