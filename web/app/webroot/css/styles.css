@@ -10,7 +10,7 @@ body {
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:9pt;
 	line-height:1.5em;
-	background:url(../images/bg_img.png) repeat-x;
+	background:url(../img/bg_img.png) repeat-x;
 }
 
 .container{
@@ -37,7 +37,7 @@ body {
 .logo{
 	width:290px;
 	height:100px;
-	background:url(../images/logo.png) no-repeat;
+	background:url(../img/logo.png) no-repeat;
 	float:left;
 	margin-top:15px;
 	margin-left:30px;
@@ -59,7 +59,7 @@ body {
 }
 
 .uppernav{
-	background:#0D87B3 url(../images/nav_img.png) repeat-x;
+	background:#0D87B3 url(../img/nav_img.png) repeat-x;
 	padding:5px;
 	width:95%;
 	font-weight:bold;
@@ -226,9 +226,9 @@ body {
 dl{line-height:170%;margin-bottom:20px}
 dl,dt,dd{padding:0;margin:0}
 .faqs{padding-top:20px}
-.faqs dt{font-weight:bold;background:url(../images/q.png) 0 4px no-repeat;padding:3px 0 15px 30px;position:relative;}
+.faqs dt{font-weight:bold;background:url(../img/q.png) 0 4px no-repeat;padding:3px 0 15px 30px;position:relative;}
 .faqs dt:hover{cursor:pointer}
-.faqs dd{background:url(../images/a.png) 0 2px no-repeat;padding:0 0 5px 30px;position:relative;}
+.faqs dd{background:url(../img/a.png) 0 2px no-repeat;padding:0 0 5px 30px;position:relative;}
 .faqs .hover{color:#06C;text-decoration:underline}
 
 .eventImg{
@@ -262,7 +262,7 @@ dl,dt,dd{padding:0;margin:0}
 	margin:10px auto;
 	border:2px solid #F2F2F2;
 	width:80%;
-	background:#F2F2F2 url(../images/fieldset_img.png) repeat-x;
+	background:#F2F2F2 url(../img/fieldset_img.png) repeat-x;
 	padding:20px;
 	color:#333;
 	-webkit-border-radius:10px;
@@ -357,7 +357,7 @@ fieldset{
 	width:85%;
 	margin-top:10px;
 	border:none;
-	background:#F2F2F2 url(../images/fieldset_img.png) repeat-x;
+	background:#F2F2F2 url(../img/fieldset_img.png) repeat-x;
 	padding:20px;
 	color:#333;
 	font-weight:bold;
@@ -595,7 +595,7 @@ label{
 }
 
 .eventtitle{
-	background:url(../images/nav_img.png) repeat-x;
+	background:url(../img/nav_img.png) repeat-x;
 	padding:10px 5px 5px 5px;
 	height:25px;
 	color:#fff;
@@ -693,6 +693,6 @@ label{
 
 .footer{
 	height:200px;
-	background: url(../images/footer.png) repeat-x;
+	background: url(../img/footer.png) repeat-x;
 	
 }
