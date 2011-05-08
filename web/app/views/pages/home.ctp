@@ -9,7 +9,7 @@
         	<p class="dropcap">W<strong>hy Evrica? <br/></strong> <img src="<?php echo $this->Html->url('/img/img_index.jpg'); ?>" width="130" height="159" class="image_right"/> is an online event Management hub for africa and events  around africa.<br/>
 
                     Evrica helps to reduce time and expense required to manage events such as conferences, competitions, trade shows, training seminars, travel, press tours and customer briefings,  events publicity and  participation management.
-                    <span class="readmore"> more + </span> </p>
+                    <span class="readmore"> <a href="<?php echo $html->url('/pages/services'); ?>">more + </a></span> </p>
 
     </div>
    	<div class="slideshow">
@@ -53,27 +53,99 @@
 
 
     <div class="wrap">
-    <div class="opac">
-		<div class="leftside">
-			<div class="note blue rounded">
-				<h4><img src="<?php echo $this->Html->url('/img/categories.png'); ?>" border="0"/></h4>
-                	<ul>
-                   	 <?php foreach($mainCategories as $catId => $catName){ ?>
-                        <li><?php echo $this->Html->link($catName,"#/Evrivents/search/:category_id=$catId"); ?></li>
-                       <?php } ?>
-              </ul>
-                    <span class="readmore">
-                        more +</span>
+     	<div class="listcountry">
+		<div class="note blue rounded">
+        <img src="<?php echo $html->url('/img');?>/event_country.png" width="200" height="30" alt="Events By Country" />
+        <div class="clear">&nbsp;</div>
+<div class="listL">
+			<div class="listL">
+			<a href="">Angola</a>
+<a href="">Benin</a>
+<a href="">Botswana</a>
+<a href="">Burkina Faso</a>
+<a href="">Burundi</a>
+<a href="">Cameroon</a>
+<a href="">Cape Verde</a>
+<a href="">Central African Republic</a>
+<a href="">Chad</a>
+<a href="">Democratic Republic of Congo</a>
+<a href="">Republic of Congo</a>
+<a href="">Cote d'Ivoire</a>
+<a href="">Djibouti</a>
 		  </div>
+			<div class="listR">
+		<a href="">Egypt</a>
+<a href="">Equatorial Guinea</a>
+<a href="">Eritrea</a>
+<a href="">Ethiopia</a>
+<a href="">Gabon</a>
+<a href="">Gambia</a>
+<a href="">Ghana</a>
+<a href="">Guinea</a>
+<a href="">Guinea Bissau</a>
+<a href="">Kenya</a>
+<a href="">Lesotho</a>
+<a href="">Liberia</a>
+			</div>
+
 		</div>
 
-		<div class="centerside">
-                    
-        	<div class="ggl">
-                    <img src="<?php echo $this->Html->url('/img/google_ads.png'); ?>" /></div>
+		<div class="listR">
+			<div class="listL">
+				<a href="">Libya</a>
+<a href="">Madagascar</a>
+<a href="">Malawi</a>
+<a href="">Mali</a>
+<a href="">Mauritania</a>
+<a href="">Mauritius</a>
+<a href="">Morocco</a>
+<a href="">Mozambique</a>
+<a href="">Namibia</a>
+<a href="">Niger</a>
+<a href="">Nigeria</a>
+<a href="">Reunion</a>
+<a href="">Rwanda</a>
+<a href="">Sao Tome and Principe</a>
+			</div>
+			<div class="listR">
+		<a href="">Senegal</a>
+<a href="">Seychelles</a>
+<a href="">Sierra Leone</a>
+<a href="">Somalia</a>
+<a href="">South Africa</a>
+<a href="">South Sudan</a>
+<a href="">Sudan</a>
+<a href="">Swaziland</a>
+<a href="">Tanzania</a>
+<a href="">Togo</a>
+<a href="">Tunisia</a>
+<a href="">Uganda</a>
+<a href="">Zambia</a>
+<a href="">Zimbabwe</a>
+			</div>
+		</div>
+		<div class="clear">&nbsp;</div>
+	  </div>
+	</div>
+
+	<div class="leftside">
+	<div class="note blue rounded">
+		<h4><img src="<?php echo $html->url('/img');?>/categories.png" border="0"/></h4>
+			<ul>
+			   <?php foreach($mainCategories as $catId => $catName){ ?>
+                        <li><?php echo $this->Html->link($catName,"#/Evrivents/search/:category_id=$catId"); ?></li>
+                       <?php } ?>
+	  </ul>
+			<span class="readmore">more +</span>
+  </div>
+</div>
+
+<div class="rightside">
+			        	<!-- <div class="ggl"><img src="<?php echo $html->url('/img');?>/google_ads.png" /> <BR /><strong>UNDER CONSTRUCTION</strong></div> -->
 			<div class="note blue rounded">
-				<h4><img src="<?php echo $this->Html->url('/img/upcoming.png'); ?>" width="172" height="33" border="0"/></h4>
-                <ul><?php foreach($events as $event){ ?>
+				<h4><img src="<?php echo $html->url('/img');?>/upcoming.png" width="172" height="33" border="0"/></h4>
+                <ul>
+                   	  <?php foreach($events as $event){ ?>
                    	  <li>
                         	<div class="evt">
                                 <div class="evtName"><?php echo $this->Html->link($event['Event']['name'],"/evrivents/viewEvent/{$event['Event']['id']}"); ?></div>
@@ -83,27 +155,14 @@
                             </div>
                         </li>
                         <?php } ?>
-                         
-                    </li>
+
               </ul>
 		  </div>
-		 </div>
-
-		<div class="rightside">
-        	<div class="signup"><a href="<?php echo $this->Html->url('/users/add')?>" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('signup','',<?php echo $this->Html->url('/img/')?>+'signupII.png',1)"><img src="<?php echo $this->Html->url('/img/')?>signup.png" alt="Sign Up" name="signup" width="155" height="44" border="0" id="signup" /></a></div>
-			<div class="login">
-				<?php  echo $form->create('User', array('action'=>'login'));?>
-                	<fieldset>
-                    	<legend><img src="<?php echo $this->Html->url('/img/login_img.png'); ?>" width="170" height="32" border="0"/></legend>
-                	<label>Email Address</label>
-                    <?php echo $form->text('User.email',array('class'=>'input'));?>
-                    <label>Password</label>
-                   <?php echo $form->password('User.password',array('class'=>'input'));?>
-                    <div class="clear">&nbsp;</div>
-                    Forgot Password? <input type="submit" name="submit" class="btt" value="Sign in" />
-                    </fieldset>
-                <?php  echo $form->end();?>
-			</div>
 		</div>
+
+    <div class="clear">&nbsp;</div>
+	
+		
     </div>
-    </div>
+
+    

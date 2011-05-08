@@ -1,6 +1,6 @@
 <div>
 
-Events Registration
+    <b>Events Registration</b>
 <br/>
 <br/>
 
@@ -10,20 +10,11 @@ Our events portal helps events initiators or organizers to have a wide reach for
 
 <br/>
 
-
-
-
-Events Advisory
-<br/><br/>
-
-Events Advisory is another service rendered in Evrica that offers advisory services on events to our precious clients. We advise them on how to plan for their events, Hire the venue, furniture, catering, audio-visual equipment etc.
- Prepare publicity materials and undertaking direct mailing, how to advertise and other publicity activities, how to seek and sign-up corporate sponsorship to offset the event costs;
-How to sell conference registrations and collect registration fees; how to liaise with relevant Ministries, trade organizations and NGOs during the build-up to the event to confirm conference topics and obtain mailing lists,
-Arrangement of travel and accommodation for delegates and speakers; Liaising with Government Ministries, greeting and entertaining Ministers and Heads of State, and undertaking necessary protocol both prior to and during the event;
-
-
 <br/>
-Events Ticketing<br/>
+
+
+ 
+<b>Events Ticketing</b><br/>
 <br/>
 
 Evrica also offers events ticketing services to our interested clients. We help the publicizing the events through all social networks and with our highly effective and efficient email marketing strategy.
@@ -32,8 +23,8 @@ We are the best platform for event ticket sales in Africa.
 
 
 
-<br/>
-Events Advert (listing)
+<br/><br/>
+<b>Events Advert (listing)</b>
 <br/><br/>
 
 

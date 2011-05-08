@@ -25,25 +25,22 @@
         </fieldset>
     
     </div>
- <div class="alignright">
-    	<div class="note blue rounded">
-        	<img src="<?php echo $this->Html->url('/img');?>/tos.png" width="205" height="33" border="0" />
+
+
+    <div class="rightside">
+        <form action="<?php echo $html->url('/users/login')?>" method="post">
+        	<fieldset>
+            <legend><img src="<?php echo $html->url('/img');?>/login_img.png" width="170" height="32" /></legend>
+        	<label>Email Address</label>
+            <input type="text" name="data[User][email]" class="input" />
+            <label>Password</label>
+            <input type="password" name="data[User][password]" class="input" />
             <div class="clear">&nbsp;</div>
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua;
-<ol>
-       	  		<li>Duis aute irure dolor in reprehenderit in voluptater</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptater</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptater</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptater</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptater</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptater</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptater</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptater</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptater</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptater</li>
-          </ol>
-      </div>
+            <a href="#">Forgot Password?</a> &nbsp;&nbsp;&nbsp;<input name="" type="submit" class="btt" value="Sign in"/>
+          </fieldset>
+        </form>
     </div>
+
     <div class="clear">&nbsp;</div>
 </div>
  
