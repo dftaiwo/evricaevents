@@ -9,7 +9,7 @@
         	<p class="dropcap">W<strong>hy Evrica? <br/></strong> <img src="<?php echo $this->Html->url('/img/img_index.jpg'); ?>" width="130" height="159" class="image_right"/> is an online event Management hub for africa and events  around africa.<br/>
 
                     Evrica helps to reduce time and expense required to manage events such as conferences, competitions, trade shows, training seminars, travel, press tours and customer briefings,  events publicity and  participation management.
-                    <span class="readmore"> more + </span> </p>
+                    <span class="readmore"> <a href="<?php echo $html->url('/pages/services'); ?>">more + </a></span> </p>
 
     </div>
    	<div class="slideshow">
