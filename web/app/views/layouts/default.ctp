@@ -91,7 +91,7 @@
                     <li><a href="<?php echo $this->Html->url('/'); ?>">Home</a></li>
 
                     <li><a href="<?php echo $html->url('/pages/about');?>">About Evrica</a></li>
-                     <li><a href="<?php echo $html->url('/pages/about');?>">Services</a>
+                     <li><a href="<?php echo $html->url('/pages/services');?>">Services</a>
                     </li>
 
                     <li><a href="#">Find Events</a></li>
@@ -145,7 +145,7 @@
                     <nobr><!--leave this here for now -->
                       <a href="<?php echo $html->url('/');?>">Home</a>
                     <a href="<?php echo $html->url('/pages/about');?>">About Evrica</a>
-                      <a href="<?php echo $html->url('/pages/about');?>">Services</a>
+                      <a href="<?php echo $html->url('/pages/services');?>">Services</a>
                      <a href="">Find Events</a>
                     
                     <a href="">FAQ</a>
