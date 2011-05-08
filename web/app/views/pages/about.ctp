@@ -9,6 +9,6 @@ Our events listing help corporate entities and individuals to locate trainings a
 
 </div>
  
- 
+ </div>
 
  
