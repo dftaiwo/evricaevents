@@ -2,7 +2,7 @@
     	<div class="note blue rounded">
         	<h4>Hi, User</h4>
 
-             Logout
+                <a href="<?php echo $html->url('/users/logout')?>">Logout</a>
         </div>
     </div>
 
