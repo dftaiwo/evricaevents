@@ -76,29 +76,7 @@
                             </div>
                         </li>
                         <?php } ?>
-                        <li>
-                        	<div class="evt">
-                                <div class="evtName">Event &raquo; Garage48</div>
-                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span></div>
-                            </div>
-                        </li>
-
-                        <li>
-                        	<div class="evt">
-                                <div class="evtName">Event &raquo; Garage48</div>
-                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                        	<div class="evt">
-                                <div class="evtName">Event &raquo; Garage48</div>
-                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span>
-
-                                </div>
-                            </div>
-                        </li>
+                         
                     </li>
               </ul>
 		  </div>
