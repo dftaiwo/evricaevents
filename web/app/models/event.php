@@ -192,8 +192,8 @@ class Event extends AppModel {
         function createSlug($string){
             
             $string = low($string);
-            $string = preg_replace('/[^a-z0-9_]/i', $settings['separator'], $string);
-            $string = preg_replace('/' . preg_quote($settings['separator']) . '[' . preg_quote($settings['separator']) . ']*/', $settings['separator'], $string);
+            $string = preg_replace('/[^a-z0-9_]/i', '_', $string);
+            $string = preg_replace('/' . '_' . '[' . '_' . ']*/', '_', $string);
             
             $conditions = array('event_slug'=>$string);
             if($this->id){
@@ -228,13 +228,16 @@ class Event extends AppModel {
         function save($data){
             
             if(isset($data['Event'])){
-                $data['Event']['event_slug'] = $this->createSlug($data['Event']['event_slug']);
-            }else{
+                $data['Event']['event_slug'] = $this->createSlug($data['Event']['name']);
+            
                 
-                $data['event_slug'] = $this->createSlug($data['event_slug']);
+            } else {
+                
+                $data['event_slug'] = $this->createSlug($data['name']);
                 
             }
-            parent::save($data);
+            
+            return parent::save($data);
         }
 }
 ?>

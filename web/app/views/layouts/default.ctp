@@ -95,13 +95,13 @@
                     <li><a href="#">Find Events</a></li>
 
                      <li><a href="<?php echo $html->url('/pages/services'); ?>">Services</a>
-                        <ul>
+<!--                        <ul>
                             <li><a href="#">Web Development</a></li>
                             <li><a href="#">Web Management</a></li>
                             <li><a href="#">Database Management</a></li>
                             <li><a href="#">Graphic Designers</a></li>
                             <li><a href="#">Branding</a></li>
-                        </ul>
+                        </ul>-->
                     </li> 
 
                     <li><a href="#">FAQ</a></li>
@@ -140,16 +140,15 @@
         <div class="footer">
             <div class="wrapfoot">
                 <div class="siteinfo">
-
                     <nobr><!--leave this here for now -->
-                      <a href="<?php echo $html->url('/');?>">Home</a>
+                    <a href="<?php echo $html->url('/');?>">Home</a>
                     <a href="<?php echo $html->url('/pages/about');?>">About Evrica</a>
                     
                     <a href="">Find Events</a>
                     <a href="<?php echo $html->url('/pages/services');?>">Services</a>
                     <a href="">FAQ</a>
                     <a href="">Contact Us</a>
-<?php echo $this->Html->link('Manage Events', "/ManageEvents/index"); ?>
+    <?php echo $this->Html->link('Manage Events', "/ManageEvents/index"); ?>
     <div class="inforights">Evrica :: Event Management for Africa &copy; 2011</div>
                     </nobr>
                 </div>

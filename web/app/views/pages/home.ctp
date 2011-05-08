@@ -100,7 +100,7 @@
                     <label>Password</label>
                    <?php echo $form->password('User.password',array('class'=>'input'));?>
                     <div class="clear">&nbsp;</div>
-                    Forgort Password? <input type="submit" name="submit" class="btt" value="Sign in" />
+                    Forgot Password? <input type="submit" name="submit" class="btt" value="Sign in" />
                     </fieldset>
                 <?php  echo $form->end();?>
 			</div>

@@ -5,79 +5,58 @@
  */
 
 ?>
-<h2><?php  __('Event');?></h2>
-<?php
+
+
+<div style="font-size:16px;font-weight:bold;border:2px dotted #fff;background:#ddd;padding:6px 8px;margin-bottom:6px;">
+    <?php echo $eventInfo['Event']['name']; ?>
+</div>
+  <div class="gmap" style="display:block;float:right; width:300px;margin-left:20px;margin-bottom: 20px;">
+      <?php
 if($eventInfo['Event']['event_logo_url']){
 
-    echo $this->Html->image("/uploads/logos/{$eventInfo['Event']['event_logo_url']}",array('align'=>'right'));
     
-
+echo $this->Html->image("/uploads/logos/{$eventInfo['Event']['event_logo_url']}");
+    
+    
 }
 
 ?>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		 <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('State'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($eventInfo['State']['name'], array('controller' => 'states', 'action' => 'view', $eventInfo['State']['id'])); ?>
-			&nbsp;
-		</dd>
-		 <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $eventInfo['Event']['name']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Event Slug'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $eventInfo['Event']['event_slug']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Description'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $eventInfo['Event']['description']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Is Free'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo ($eventInfo['Event']['is_free'])? 'Yes':'Pay to Attend'; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Privacy'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo ($eventInfo['Event']['is_private'])? 'Hidden':'Not Private'; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Total Seats'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $eventInfo['Event']['total_seats']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Address'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $eventInfo['Event']['address']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Event Url'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $eventInfo['Event']['event_url']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Event Company'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $eventInfo['Event']['event_company']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Active'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo ($eventInfo['Event']['active'])? 'Yes':'No'; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Event Company Info'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $eventInfo['Event']['event_company_info']; ?>
-			&nbsp;
-		</dd>
-		 
-	</dl>
+
+      
+      
+      
+  </div>
+
+<div class="fullevents" style="text-align:justify;">
+    <b>Publisher:</b> <?php echo $eventInfo['Event']['event_company']; ?> <br />
+    <b>Total seat:</b> <?php echo $eventInfo['Event']['total_seats']; ?>
+  <p><b>Start Date:</b> <?php echo $eventInfo['EvDate']['start_date']; ?>  :  <b>End Date:</b><?php echo $eventInfo['EvDate']['end_date']; ?></p>
+  <p><b>Categories:</b> <?php
+		$i = 0;
+		foreach ($eventInfo['Category'] as $category):
+			
+		?>
+			
+			<?php echo $category['name'];?>,
+	<?php endforeach; ?>
+  </p>
+  <p><b>Tags:</b>
+  <?php
+		$i = 0;
+		foreach ($eventInfo['Tag'] as $category):
+			
+		?>
+			
+			<?php echo $category['name'];?>,
+	<?php endforeach; ?>
+  </p>
+  <p>
+      <?php echo $eventInfo['Event']['description']; ?>
+  </p>
+   <p><B>Location:</B> <?php echo $eventInfo['Event']['address']; ?></p>
+   <p><B>Event Website:</B> <?php echo $this->Html->link($eventInfo['Event']['event_url'],$eventInfo['Event']['event_url'],true); ?></p>
+  </div>
+ 
     <div class="actions">
         <ul>
             <li>
@@ -86,53 +65,7 @@ if($eventInfo['Event']['event_logo_url']){
             </li>
         </ul>
     </div>
- 
-<div class="related">
-	<h3><?php __('Related Event Dates');?></h3>
-	<?php if (!empty($eventInfo['EventDate'])):?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Event Id'); ?></th>
-		<th><?php __('Start Date'); ?></th>
-		<th><?php __('End Date'); ?></th>
-		<th><?php __('Agenda'); ?></th>
-		<th><?php __('Created'); ?></th>
-		<th><?php __('Modified'); ?></th>
-		<th class="actions"><?php __('Actions');?></th>
-	</tr>
-	<?php
-		$i = 0;
-		foreach ($eventInfo['EventDate'] as $eventInfoDate):
-			$class = null;
-			if ($i++ % 2 == 0) {
-				$class = ' class="altrow"';
-			}
-		?>
-		<tr<?php echo $class;?>>
-			<td><?php echo $eventInfoDate['id'];?></td>
-			<td><?php echo $eventInfoDate['event_id'];?></td>
-			<td><?php echo $eventInfoDate['start_date'];?></td>
-			<td><?php echo $eventInfoDate['end_date'];?></td>
-			<td><?php echo $eventInfoDate['agenda'];?></td>
-			<td><?php echo $eventInfoDate['created'];?></td>
-			<td><?php echo $eventInfoDate['modified'];?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('controller' => 'event_dates', 'action' => 'view', $eventInfoDate['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'event_dates', 'action' => 'edit', $eventInfoDate['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'event_dates', 'action' => 'delete', $eventInfoDate['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $eventInfoDate['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Event Date', true), array('controller' => 'event_dates', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
-</div>
+  
 <div class="related">
 	<h3><?php __('Related Event Images');?></h3>
 	<?php if (!empty($eventInfo['EventImage'])):?>
@@ -179,7 +112,7 @@ if($eventInfo['Event']['event_logo_url']){
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Event Image', true), array('controller' => 'event_images', 'action' => 'add'));?> </li>
+			<li><?php //echo $this->Html->link(__('New Event Image', true), array('controller' => 'event_images', 'action' => 'add'));?> </li>
 		</ul>
 	</div>
 </div>
@@ -223,7 +156,7 @@ if($eventInfo['Event']['event_logo_url']){
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Event Seat', true), array('controller' => 'event_seats', 'action' => 'add'));?> </li>
+			<li><?php //echo $this->Html->link(__('New Event Seat', true), array('controller' => 'event_seats', 'action' => 'add'));?> </li>
 		</ul>
 	</div>
 </div>
@@ -269,30 +202,13 @@ if($eventInfo['Event']['event_logo_url']){
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Event Speaker', true), array('controller' => 'event_speakers', 'action' => 'add'));?> </li>
+			<li><?php 
+                        //echo $this->Html->link(__('New Event Speaker', true), array('controller' => 'event_speakers', 'action' => 'add'));
+                        ?> </li>
 		</ul>
 	</div>
 </div>
 
 <div class="related">
-	<h3><?php __('Related Categories');?></h3>
-	<?php if (!empty($eventInfo['Category'])):?>
-		<?php
-		$i = 0;
-		foreach ($eventInfo['Category'] as $category):
-			
-		?>
-			
-			<?php echo $category['name'];?>,
-	<?php endforeach; ?>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li>
-
-                        </li>
-
-		</ul>
-	</div>
-</div>
+	 
+</div> 

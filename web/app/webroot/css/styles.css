@@ -592,3 +592,41 @@ label{
 	background: url(../img/footer.png) repeat-x;
 
 }
+.googlemap
+{ float:left;
+position:absolute;
+top:300px;
+padding-left:600px; 
+}
+
+
+.dashboard
+{
+margin-left:3px;
+text-align:justify;
+border:1px;
+border-color:#3366CC;
+height:200px;
+}
+
+.dashplate{
+background-image:url(../img/field.png);
+background-repeat:no-repeat;
+
+}
+.dashboard2
+{
+position:relative;
+text-align:justify;
+width:150px;
+border:1px;
+border-color:#3366CC;
+float:right;
+}
+.dashcontent
+{ float:left;
+position:absolute;
+top:500px;
+padding-left:600px; 
+}
+
