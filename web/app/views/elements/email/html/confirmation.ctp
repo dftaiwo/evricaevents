@@ -5,7 +5,7 @@ Hi <?php echo $name;?><br />
 <p>
 To confirm your new account, please go to this web address: <br/>
 
-http://solarenergytraining.org/login/confirm.php?data=pSxECI8zpLt28WI/femi_bilesanmi
+ http://<?php echo $server_name;?>/beta/users/login
 </p>
 <p>
 In most mail programs, this should appear as a blue link

@@ -41,7 +41,7 @@ class UsersController extends AppController {
 
 
 
-if(!empty($this->data['User']['email'])&&!empty($this->data['User']['firstname'])&&!empty($this->data['User']['lastname']) &&$this->data['Public']['message']!='Write your message please'&&$this->data['Public']['sender_email']!='Enter your Email'&&$this->data['Public']['sender']!='Enter your Name')
+if(!empty($this->data['User']['email'])&&!empty($this->data['User']['firstname'])&&!empty($this->data['User']['lastname']))
 {
 $topattern='[;|,]';
 $to=$this->data['User']['email'];
@@ -86,7 +86,8 @@ $this->set('emailID', $this->data['User']['email']);
          {
 
   $this->Session->setFlash('You have been Sucessfully  Registered, Kindly Check your email and confirm your account!');
-                $this->redirect(array('action'=>'login'));
+                
+  $this->redirect('/');
 
 Configure::write('debug',0);
 exit;
@@ -97,16 +98,14 @@ exit;
             else
                 {
                 $this->Session->setFlash('Email Not sent, please try again later');
-                 $this->redirect(array('action'=>'login'));
-                 Configure::write('debug',0);
-                 exit;
+                  $this->redirect('/');
                 // echo debug($this->data);
                 }
 }
 else
     {
      $this->Session->setFlash('Ooops! , please provide your email,name and message');
-                 Configure::write('debug',0);
+                  $this->redirect('/');
                  exit;
     }
 
