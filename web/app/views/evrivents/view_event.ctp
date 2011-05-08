@@ -116,7 +116,7 @@ if($eventInfo['EvDate']['start_date']!=$eventInfo['EvDate']['end_date']){
   </div>
  
       
-    <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAZz9OUXAp4931Hx1ucTYu4xRkvmT_3GFeETHWAyZ-loBPdQqlexRM5wdmzhWmkMomdIHkPe5HYfHcXA" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAZz9OUXAp4931Hx1ucTYu4xQeBsnJt5V1kt2deR_bQQjIMqGx3xT8hkt6qVPvcd_MDDrDbGBuXd4hTg" type="text/javascript"></script>
 
     <script>
         
