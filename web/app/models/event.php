@@ -187,5 +187,52 @@ class Event extends AppModel {
             return $this->find('all',array('order'=>array('EvDate.start_date'=>'DESC'),'limit'=>5));
 
         }
+        
+        
+        function createSlug($string){
+            
+            $string = low($string);
+            $string = preg_replace('/[^a-z0-9_]/i', $settings['separator'], $string);
+            $string = preg_replace('/' . preg_quote($settings['separator']) . '[' . preg_quote($settings['separator']) . ']*/', $settings['separator'], $string);
+            
+            $conditions = array('event_slug'=>$string);
+            if($this->id){
+                
+                
+                $conditions[]="Event.id <> {$this->id}";
+                
+                
+            }
+            
+            if(!$this->field('id',$conditions)){
+                
+                return $string;
+                
+            }
+            
+            for($i=0;$i< 100000;$i++){
+                $testString = $string.'_'.$i;
+                $conditions['event_slug'] = $testString;
+                if(!$this->field('id',$conditions)){
+                
+                   return $testString;
+                
+                }
+                
+                
+            }
+            
+            return $this->id;
+        }
+        
+        function save($data){
+            
+            if(isset($data['Event'])){
+                $data['Event']['event_slug'] = $this->createSlug($data['Event']['event_slug']);
+            }else{
+                
+            }
+            parent::save($data);
+        }
 }
 ?>

@@ -47,7 +47,7 @@ class PagesController extends AppController {
  */
 	var$components=array('Session');
         var $helpers = array('Html', 'Session');
-        var $uses = array('Event');
+        var $uses = array('Event','Category');
 //        var $layout = 'home';
 
 /**
@@ -71,7 +71,9 @@ class PagesController extends AppController {
                 
                 $this->set('events',$events);
 
-                //$mainCategories = 
+                $mainCategories = $this->Category->getMainCategories();
+                
+                $this->set('mainCategories',$mainCategories);
                 
 		$path = func_get_args();
 

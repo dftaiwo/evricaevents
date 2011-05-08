@@ -49,21 +49,19 @@
 			<div class="note blue rounded">
 				<h4><img src="<?php echo $this->Html->url('/img/categories.png'); ?>" border="0"/></h4>
                 	<ul>
-                   	  <li>Agriculture</li>
-                        <li>Announcement &amp; Events</li>
-                        <li>Automobile</li>
-                        <li>Banking</li>
-                        <li>Energy</li>
-                        <li>Entertainment</li>
-                        <li>Health</li>
-                        <li>Information Technology</li>
+                   	 <?php foreach($mainCategories as $catId => $catName){ ?>
+                        <li><?php echo $this->Html->link($catName,"#/Evrivents/search/:category_id=$catId"); ?></li>
+                       <?php } ?>
               </ul>
-                    <span class="readmore">more +</span>
+                    <span class="readmore">
+                        more +</span>
 		  </div>
 		</div>
 
 		<div class="centerside">
-        	<div class="ggl"><img src="<?php echo $this->Html->url('/img/google_ads.png'); ?>" /></div>
+                    
+        	<div class="ggl">
+                    <img src="<?php echo $this->Html->url('/img/google_ads.png'); ?>" /></div>
 			<div class="note blue rounded">
 				<h4><img src="<?php echo $this->Html->url('/img/upcoming.png'); ?>" width="172" height="33" border="0"/></h4>
                 <ul><?php foreach($events as $event){ ?>

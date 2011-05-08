@@ -47,6 +47,12 @@ class Category extends AppModel {
 			'insertQuery' => ''
 		)
 	);
+        
+        function getMainCategories(){
+            
+            return $this->find('list',array('order'=>'name', 'conditions'=>array('Category.parent_id'=>0)));
+            
+        }
 
 }
 ?>
