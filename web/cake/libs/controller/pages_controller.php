@@ -88,5 +88,12 @@ class PagesController extends AppController {
         function about()
         {
             $this->layout='inners';
+
+        }
+
+
+        function services()
+        {
+            $this->layout='inners';
         }
 }
