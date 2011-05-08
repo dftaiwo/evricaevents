@@ -231,6 +231,8 @@ class Event extends AppModel {
                 $data['Event']['event_slug'] = $this->createSlug($data['Event']['event_slug']);
             }else{
                 
+                $data['event_slug'] = $this->createSlug($data['event_slug']);
+                
             }
             parent::save($data);
         }
