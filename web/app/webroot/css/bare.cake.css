@@ -16,19 +16,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
- 
-a {
-	color: #003d4c;
-	text-decoration: underline;
-	font-weight: bold;
-}
-a:hover {
-	color: #367889;
-	text-decoration:none;
-}
-a img {
-	border:none;
-}
+   
 h1, h2, h3, h4 {
 	font-weight: normal;
 	margin-bottom:0.5em;
@@ -417,4 +405,32 @@ div.code-coverage-results span.result-ok {
 div.code-coverage-results span.result-good {
 	color: #0a0;
 }
+
+.normal *{
+    display:inline;
+}
+
+.normal div * {
+font-size:10px;
+font-weight:normal;
+}
+
+a.bigButton {
+    width:100px;
+    background:orange;
+    color:#fff;
+    border: 1px dotted white;
+    display:block;
+    padding:4px 10px;
+    font-weight:bold;
+    text-align:center;
+    text-decoration: none;
+}
+
+
+
+a.bigButton:hover {
+    background:blue;
+}
+
 

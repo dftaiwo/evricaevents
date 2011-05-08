@@ -18,11 +18,12 @@
       echo $this->Form->input('EventDate.end_date',array('type'=> 'text','id'=>'EventDateEnd','class'=>'rst','div'=>false,'value'=>isset($eventInfo['EvDate']['end_date']) ? $eventInfo['EvDate']['end_date']:''  ));
       echo $this->Form->input('Category',array('class'=>'input','div'=>false));
       echo $this->Form->input('Tag',array('class'=>'input','div'=>false));
+      
       echo $this->Form->input('is_free',array('type'=>'checkbox','label'=>'Are Participants Required to Pay to Attend?','div'=>false));
       echo $this->Form->input('is_private',array('type'=>'checkbox','label'=>'Hide the Event from the Search Engine/Public View','div'=>false));
       echo $this->Form->input('country_id',array('label'=>'Event Location - Country','class'=>'input','div'=>false));
       echo $this->Form->input('state_id',array('label'=>'Event Location - State','class'=>'input','div'=>false));
-      echo $this->Form->input('address',array('class'=>'input','div'=>false));
+      echo $this->Form->input('address',array('class'=>'input','div'=>false,'id'=>'gAddress'));
 //      echo $this->Form->input('gps_coords');
       echo $this->Form->input('event_url',array('class'=>'input','div'=>false));
 //      echo $this->Form->input('event_slug',array('class'=>'input'));
@@ -76,6 +77,15 @@
                     $( "#EventDateEnd" ).val('<?php echo $eventInfo['EvDate']['end_date']; ?>');
 
              <?php  } ?>
+
+
+            $('#gAddress').change(function(){
+
+
+                    
+
+
+            });
 
 	});
 </script>

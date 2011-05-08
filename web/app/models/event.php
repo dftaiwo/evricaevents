@@ -184,9 +184,60 @@ class Event extends AppModel {
 
         function getRandomEvents(){
 
-            return $this->find('all',array('order'=>array('RAND()'),'limit'=>5));
+            return $this->find('all',array('order'=>array('EvDate.start_date'=>'DESC'),'limit'=>5));
 
-
+        }
+        
+        
+        function createSlug($string){
+            
+            $string = low($string);
+            $string = preg_replace('/[^a-z0-9_]/i', '_', $string);
+            $string = preg_replace('/' . '_' . '[' . '_' . ']*/', '_', $string);
+            
+            $conditions = array('event_slug'=>$string);
+            if($this->id){
+                
+                
+                $conditions[]="Event.id <> {$this->id}";
+                
+                
+            }
+            
+            if(!$this->field('id',$conditions)){
+                
+                return $string;
+                
+            }
+            
+            for($i=0;$i< 100000;$i++){
+                $testString = $string.'_'.$i;
+                $conditions['event_slug'] = $testString;
+                if(!$this->field('id',$conditions)){
+                
+                   return $testString;
+                
+                }
+                
+                
+            }
+            
+            return $this->id;
+        }
+        
+        function save($data){
+            
+            if(isset($data['Event'])){
+                $data['Event']['event_slug'] = $this->createSlug($data['Event']['name']);
+            
+                
+            } else {
+                
+                $data['event_slug'] = $this->createSlug($data['name']);
+                
+            }
+            
+            return parent::save($data);
         }
 }
 ?>

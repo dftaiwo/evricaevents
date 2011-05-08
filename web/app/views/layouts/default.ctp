@@ -152,9 +152,11 @@
                       <a href="<?php echo $html->url('/pages/services');?>">Services</a>
                      <a href="">Find Events</a>
                     
+                    <a href="">Find Events</a>
+                    <a href="<?php echo $html->url('/pages/services');?>">Services</a>
                     <a href="">FAQ</a>
                     <a href="">Contact Us</a>
-<?php echo $this->Html->link('Manage Events', "/ManageEvents/index"); ?>
+    <?php echo $this->Html->link('Manage Events', "/ManageEvents/index"); ?>
     <div class="inforights">Evrica :: Event Management for Africa &copy; 2011</div>
                     </nobr>
                 </div>

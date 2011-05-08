@@ -132,56 +132,29 @@
 	<div class="note blue rounded">
 		<h4><img src="<?php echo $html->url('/img');?>/categories.png" border="0"/></h4>
 			<ul>
-			  <li>Agriculture</li>
-				<li>Announcement &amp; Events</li>
-				<li>Automobile</li>
-				<li>Banking</li>
-				<li>Energy</li>
-				<li>Entertainment</li>
-				<li>Health</li>
-				<li>Information Technology</li>
+			   <?php foreach($mainCategories as $catId => $catName){ ?>
+                        <li><?php echo $this->Html->link($catName,"#/Evrivents/search/:category_id=$catId"); ?></li>
+                       <?php } ?>
 	  </ul>
 			<span class="readmore">more +</span>
   </div>
 </div>
 
 <div class="rightside">
-			        	<div class="ggl"><img src="<?php echo $html->url('/img');?>/google_ads.png" /> <BR /><strong>UNDER CONSTRUCTION</strong></div>
+			        	<!-- <div class="ggl"><img src="<?php echo $html->url('/img');?>/google_ads.png" /> <BR /><strong>UNDER CONSTRUCTION</strong></div> -->
 			<div class="note blue rounded">
 				<h4><img src="<?php echo $html->url('/img');?>/upcoming.png" width="172" height="33" border="0"/></h4>
                 <ul>
+                   	  <?php foreach($events as $event){ ?>
                    	  <li>
                         	<div class="evt">
-                                <div class="evtName">Event &raquo; Garage48</div>
-                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span>
+                                <div class="evtName"><?php echo $this->Html->link($event['Event']['name'],"/evrivents/viewEvent/{$event['Event']['id']}"); ?></div>
+                                <div class="catDate">Category &raquo; *** <?php echo date('M dS',strtotime($event['EvDate']['start_date'])); ?><?php if($event['EvDate']['start_date']!=$event['EvDate']['end_date']){?> - <?php echo date('dS',strtotime($event['EvDate']['end_date'])); }?>. <a href="<?php echo $this->Html->url("/evrivents/viewEvent/{$event['Event']['id']}"); ?>"><span class="readmore">+ more</span></a>
 
                                 </div>
                             </div>
                         </li>
-
-                        <li>
-                        	<div class="evt">
-                                <div class="evtName">Event &raquo; Garage48</div>
-                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span></div>
-                            </div>
-                        </li>
-
-                        <li>
-                        	<div class="evt">
-                                <div class="evtName">Event &raquo; Garage48</div>
-                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                        	<div class="evt">
-                                <div class="evtName">Event &raquo; Garage48</div>
-                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span>
-
-                                </div>
-                            </div>
-                        </li>
+                        <?php } ?>
 
               </ul>
 		  </div>
@@ -191,3 +164,5 @@
 	
 		
     </div>
+
+    

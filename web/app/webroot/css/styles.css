@@ -13,6 +13,7 @@ body {
 	background:url(../img/bg_img.png) repeat-x;
 }
 
+
 .container{
 	background:#fff;
 	margin:10px auto -40px auto;
@@ -167,6 +168,24 @@ body {
 	
 }
 
+.note a:link{
+    color:#fff;
+}
+
+
+.note a:hover{
+    color:#fff;
+}
+
+.note a:visited{
+    color:#fff;
+}
+
+
+.evtName a:link, .evtName a:visited{
+    color:#333;
+}
+
 .note:before {
     content:"";
     position:absolute;
@@ -248,7 +267,6 @@ dl,dt,dd{padding:0;margin:0}
 	width:70%;
 	float:right;
 	padding:10px;
-	background:#F2F2F2 url(../img/fieldset_img.png) repeat-x;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
@@ -327,7 +345,7 @@ dl,dt,dd{padding:0;margin:0}
 	 width:32%;
 	 float:left;
 }
-.centerside a{
+.centerside a:link{
 	text-decoration:none;
 	color:#f0f0f0;
 }
@@ -336,6 +354,10 @@ dl,dt,dd{padding:0;margin:0}
 	color:#fff;
 }
 
+.centerside a:visited{
+	text-decoration:none;
+	color:#f0f0f0;
+}
 
 .alignright{
 	width:40%;
@@ -375,6 +397,12 @@ fieldset a{
 	color:#333;
 	text-decoration:none;	
 }
+
+fieldset a:visited{
+	color:#333;
+	text-decoration:none;	
+}
+
 fieldset a:hover{
 	color:#09F;
 	text-decoration:underline;
@@ -406,6 +434,11 @@ label{
 .authsign a:hover{
 	text-decoration:underline;
 }
+
+.authsign a:visitd{
+	color:#069;
+}
+
 .rst{
 	font-size:8pt;
 	color:#666;
@@ -504,6 +537,10 @@ label{
 
 .listcountry a:hover{
 	text-decoration:underline;
+}
+
+.listcountry a:visited{
+	color:#fff;
 }
 
 /*******/
@@ -697,3 +734,5 @@ label{
 	background: url(../img/footer.png) repeat-x;
 	
 }
+
+

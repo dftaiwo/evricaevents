@@ -47,7 +47,7 @@ class PagesController extends AppController {
  */
 	var$components=array('Session');
         var $helpers = array('Html', 'Session');
-        var $uses = array('Event');
+        var $uses = array('Event','Category');
 //        var $layout = 'home';
 
 /**
@@ -67,8 +67,14 @@ class PagesController extends AppController {
 	function display() {
 
                 $events = $this->Event->getRandomEvents();
+                
+                
                 $this->set('events',$events);
 
+                $mainCategories = $this->Category->getMainCategories();
+                
+                $this->set('mainCategories',$mainCategories);
+                
 		$path = func_get_args();
 
 		$count = count($path);
