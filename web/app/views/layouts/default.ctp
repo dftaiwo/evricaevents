@@ -94,7 +94,7 @@
 
                     <li><a href="#">Find Events</a></li>
 
-                    <!--<li><a href="#">Services</a>
+                     <li><a href="<?php echo $html->url('/pages/services'); ?>">Services</a>
                         <ul>
                             <li><a href="#">Web Development</a></li>
                             <li><a href="#">Web Management</a></li>
@@ -102,7 +102,7 @@
                             <li><a href="#">Graphic Designers</a></li>
                             <li><a href="#">Branding</a></li>
                         </ul>
-                    </li>-->
+                    </li> 
 
                     <li><a href="#">FAQ</a></li>
 
@@ -144,8 +144,9 @@
                     <nobr><!--leave this here for now -->
                       <a href="<?php echo $html->url('/');?>">Home</a>
                     <a href="<?php echo $html->url('/pages/about');?>">About Evrica</a>
-                    <a href="">Find Events</a>
                     
+                    <a href="">Find Events</a>
+                    <a href="<?php echo $html->url('/pages/services');?>">Services</a>
                     <a href="">FAQ</a>
                     <a href="">Contact Us</a>
 <?php echo $this->Html->link('Manage Events', "/ManageEvents/index"); ?>
