@@ -6,6 +6,7 @@
         </div>
     </div>
 
+
     <div class="panelRight">
     	<strong class="faqsize">Dashboard</strong>
     	<div class="dashb">
