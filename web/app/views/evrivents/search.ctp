@@ -29,7 +29,9 @@
                 <div class="publish">
                 	Published by &raquo; <?php echo $event['User']['firstname'].' '.$event['User']['lastname']; ?>
                     <label> Date &raquo; <?php echo date('M dS',strtotime($event['EvDate']['start_date'])); ?> <?php if($event['EvDate']['start_date']!=$event['EvDate']['end_date']){?> - <?php echo date('dS',strtotime($event['EvDate']['end_date'])); }?></label>
-                    <div class="readmore"><?php echo $this->Html->link('more +',"viewEvent/{$event['Event']['id']}"); ?></div>
+                    <div class="readmore">
+                        <?php echo $this->Html->link('more +',"viewEvent/{$event['Event']['id']}"); ?>
+                    </div>
                 </div>
 
         </div>
