@@ -74,6 +74,10 @@
             <div class="head">
                 <div class="logo">&nbsp;</div>
                 <div  class="sontwk">
+                    <div class="authsign">
+			<a href="<?php echo $html->url('/users/add')?>">Login</a> | <a href="<?php echo $html->url('/users/add')?>">Signup</a>
+		</div>
+                    <div class="clear">&nbsp;</div>
                     <?php echo $this->Form->create('Search',array('url'=>'/Evrivents/search')); ?>
                     <label>
                         <input name="data[Search][search]" type="text" id="txt1" onkeyup="showHint(this.value)" size="30" class="inputs" onfocus="if (this.value=='search events') this.value=''" onblur="if (this.value=='') this.value = 'search events'" value="search events" />
@@ -155,6 +159,8 @@
                     </nobr>
                 </div>
                 <div class="team"></div>
+
+                
             </div>
         </div>
         <?php echo $this->element('sql_dump'); ?>

@@ -53,59 +53,141 @@
 
 
     <div class="wrap">
-    <div class="opac">
-		<div class="leftside">
-			<div class="note blue rounded">
-				<h4><img src="<?php echo $this->Html->url('/img/categories.png'); ?>" border="0"/></h4>
-                	<ul>
-                   	  <li>Agriculture</li>
-                        <li>Announcement &amp; Events</li>
-                        <li>Automobile</li>
-                        <li>Banking</li>
-                        <li>Energy</li>
-                        <li>Entertainment</li>
-                        <li>Health</li>
-                        <li>Information Technology</li>
-              </ul>
-                    <span class="readmore">more +</span>
+     	<div class="listcountry">
+		<div class="note blue rounded">
+        <img src="<?php echo $html->url('/img');?>/event_country.png" width="200" height="30" alt="Events By Country" />
+        <div class="clear">&nbsp;</div>
+<div class="listL">
+			<div class="listL">
+			<a href="">Angola</a>
+<a href="">Benin</a>
+<a href="">Botswana</a>
+<a href="">Burkina Faso</a>
+<a href="">Burundi</a>
+<a href="">Cameroon</a>
+<a href="">Cape Verde</a>
+<a href="">Central African Republic</a>
+<a href="">Chad</a>
+<a href="">Democratic Republic of Congo</a>
+<a href="">Republic of Congo</a>
+<a href="">Cote d'Ivoire</a>
+<a href="">Djibouti</a>
 		  </div>
+			<div class="listR">
+		<a href="">Egypt</a>
+<a href="">Equatorial Guinea</a>
+<a href="">Eritrea</a>
+<a href="">Ethiopia</a>
+<a href="">Gabon</a>
+<a href="">Gambia</a>
+<a href="">Ghana</a>
+<a href="">Guinea</a>
+<a href="">Guinea Bissau</a>
+<a href="">Kenya</a>
+<a href="">Lesotho</a>
+<a href="">Liberia</a>
+			</div>
+
 		</div>
 
-		<div class="centerside">
-        	<div class="ggl"><img src="<?php echo $this->Html->url('/img/google_ads.png'); ?>" /></div>
+		<div class="listR">
+			<div class="listL">
+				<a href="">Libya</a>
+<a href="">Madagascar</a>
+<a href="">Malawi</a>
+<a href="">Mali</a>
+<a href="">Mauritania</a>
+<a href="">Mauritius</a>
+<a href="">Morocco</a>
+<a href="">Mozambique</a>
+<a href="">Namibia</a>
+<a href="">Niger</a>
+<a href="">Nigeria</a>
+<a href="">Reunion</a>
+<a href="">Rwanda</a>
+<a href="">Sao Tome and Principe</a>
+			</div>
+			<div class="listR">
+		<a href="">Senegal</a>
+<a href="">Seychelles</a>
+<a href="">Sierra Leone</a>
+<a href="">Somalia</a>
+<a href="">South Africa</a>
+<a href="">South Sudan</a>
+<a href="">Sudan</a>
+<a href="">Swaziland</a>
+<a href="">Tanzania</a>
+<a href="">Togo</a>
+<a href="">Tunisia</a>
+<a href="">Uganda</a>
+<a href="">Zambia</a>
+<a href="">Zimbabwe</a>
+			</div>
+		</div>
+		<div class="clear">&nbsp;</div>
+	  </div>
+	</div>
+
+	<div class="leftside">
+	<div class="note blue rounded">
+		<h4><img src="<?php echo $html->url('/img');?>/categories.png" border="0"/></h4>
+			<ul>
+			  <li>Agriculture</li>
+				<li>Announcement &amp; Events</li>
+				<li>Automobile</li>
+				<li>Banking</li>
+				<li>Energy</li>
+				<li>Entertainment</li>
+				<li>Health</li>
+				<li>Information Technology</li>
+	  </ul>
+			<span class="readmore">more +</span>
+  </div>
+</div>
+
+<div class="rightside">
+			        	<div class="ggl"><img src="<?php echo $html->url('/img');?>/google_ads.png" /> <BR /><strong>UNDER CONSTRUCTION</strong></div>
 			<div class="note blue rounded">
-				<h4><img src="<?php echo $this->Html->url('/img/upcoming.png'); ?>" width="172" height="33" border="0"/></h4>
-                <ul><?php foreach($events as $event){ ?>
+				<h4><img src="<?php echo $html->url('/img');?>/upcoming.png" width="172" height="33" border="0"/></h4>
+                <ul>
                    	  <li>
                         	<div class="evt">
-                                <div class="evtName"><?php echo $this->Html->link($event['Event']['name'],"/evrivents/viewEvent/{$event['Event']['id']}"); ?></div>
-                                <div class="catDate">Category &raquo; ICT <?php echo date('M dS',strtotime($event['EvDate']['start_date'])); ?><?php if($event['EvDate']['start_date']!=$event['EvDate']['end_date']){?> - <?php echo date('dS',strtotime($event['EvDate']['end_date'])); }?>. <span class="readmore">more +</span>
+                                <div class="evtName">Event &raquo; Garage48</div>
+                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span>
 
                                 </div>
                             </div>
                         </li>
-                        <?php } ?>
-                         
-                    </li>
+
+                        <li>
+                        	<div class="evt">
+                                <div class="evtName">Event &raquo; Garage48</div>
+                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span></div>
+                            </div>
+                        </li>
+
+                        <li>
+                        	<div class="evt">
+                                <div class="evtName">Event &raquo; Garage48</div>
+                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                        	<div class="evt">
+                                <div class="evtName">Event &raquo; Garage48</div>
+                                <div class="catDate">Category &raquo; ICT May 13th-15th, 2011. <span class="readmore">more +</span>
+
+                                </div>
+                            </div>
+                        </li>
+
               </ul>
 		  </div>
-		 </div>
-
-		<div class="rightside">
-        	<div class="signup"><a href="<?php echo $this->Html->url('/users/add')?>" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('signup','',<?php echo $this->Html->url('/img/')?>+'signupII.png',1)"><img src="<?php echo $this->Html->url('/img/')?>signup.png" alt="Sign Up" name="signup" width="155" height="44" border="0" id="signup" /></a></div>
-			<div class="login">
-				<?php  echo $form->create('User', array('action'=>'login'));?>
-                	<fieldset>
-                    	<legend><img src="<?php echo $this->Html->url('/img/login_img.png'); ?>" width="170" height="32" border="0"/></legend>
-                	<label>Email Address</label>
-                    <?php echo $form->text('User.email',array('class'=>'input'));?>
-                    <label>Password</label>
-                   <?php echo $form->password('User.password',array('class'=>'input'));?>
-                    <div class="clear">&nbsp;</div>
-                    Forgort Password? <input type="submit" name="submit" class="btt" value="Sign in" />
-                    </fieldset>
-                <?php  echo $form->end();?>
-			</div>
 		</div>
-    </div>
+
+    <div class="clear">&nbsp;</div>
+	
+		
     </div>

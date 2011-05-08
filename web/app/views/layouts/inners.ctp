@@ -43,6 +43,9 @@ function MM_preloadImages() { //v3.0
             <div class="head">
                 <div class="logo">&nbsp;</div>
                 <div  class="sontwk">
+                    <div class="authsign">
+			<a href="<?php echo $html->url('/users/add')?>">Login</a> | <a href="<?php echo $html->url('/users/add')?>">Signup</a>
+                    </div><div class="clear"></div>
                     <label>
                         <input type="text" id="txt1" onkeyup="showHint(this.value)" size="30" class="inputs" onfocus="if (this.value=='search events') this.value=''" onblur="if (this.value=='') this.value = 'search events'" value="search events" />
                         <input name="search" type="button" value="Go!" class="btt"/>
