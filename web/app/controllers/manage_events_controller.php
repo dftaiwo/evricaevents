@@ -169,6 +169,12 @@ class ManageEventsController extends AppController {
                 }
             }
 
+//            $name = $this->data['Event']['name'];
+//            $string = low($string);
+//            $string = preg_replace('/[^a-z0-9_]/i', $settings['separator'], $string);
+//            $string = preg_replace('/' . preg_quote($settings['separator']) . '[' . preg_quote($settings['separator']) . ']*/', $settings['separator'], $string);
+
+            
             $this->Event->id = $eventId;
             $this->data['Event']['id'] = $eventId;
             if ($this->Event->save($this->data)) {

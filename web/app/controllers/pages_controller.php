@@ -67,8 +67,12 @@ class PagesController extends AppController {
 	function display() {
 
                 $events = $this->Event->getRandomEvents();
+                
+                
                 $this->set('events',$events);
 
+                //$mainCategories = 
+                
 		$path = func_get_args();
 
 		$count = count($path);

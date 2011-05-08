@@ -70,7 +70,7 @@
                    	  <li>
                         	<div class="evt">
                                 <div class="evtName"><?php echo $this->Html->link($event['Event']['name'],"/evrivents/viewEvent/{$event['Event']['id']}"); ?></div>
-                                <div class="catDate">Category &raquo; ICT <?php echo date('M dS',strtotime($event['EvDate']['start_date'])); ?><?php if($event['EvDate']['start_date']!=$event['EvDate']['end_date']){?> - <?php echo date('dS',strtotime($event['EvDate']['end_date'])); }?>. <span class="readmore">more +</span>
+                                <div class="catDate">Category &raquo; *** <?php echo date('M dS',strtotime($event['EvDate']['start_date'])); ?><?php if($event['EvDate']['start_date']!=$event['EvDate']['end_date']){?> - <?php echo date('dS',strtotime($event['EvDate']['end_date'])); }?>. <a href="<?php echo $this->Html->url("/evrivents/viewEvent/{$event['Event']['id']}"); ?>"><span class="readmore">+ more</span></a>
 
                                 </div>
                             </div>

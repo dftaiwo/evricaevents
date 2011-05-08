@@ -184,8 +184,7 @@ class Event extends AppModel {
 
         function getRandomEvents(){
 
-            return $this->find('all',array('order'=>array('RAND()'),'limit'=>5));
-
+            return $this->find('all',array('order'=>array('EvDate.start_date'=>'DESC'),'limit'=>5));
 
         }
 }
