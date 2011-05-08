@@ -91,18 +91,19 @@
                     <li><a href="<?php echo $this->Html->url('/'); ?>">Home</a></li>
 
                     <li><a href="<?php echo $html->url('/pages/about');?>">About Evrica</a></li>
+                     <li><a href="<?php echo $html->url('/pages/about');?>">Services</a>
+                    </li>
 
                     <li><a href="#">Find Events</a></li>
 
-                    <!--<li><a href="#">Services</a>
-                        <ul>
+                      <!--  <ul>
                             <li><a href="#">Web Development</a></li>
                             <li><a href="#">Web Management</a></li>
                             <li><a href="#">Database Management</a></li>
                             <li><a href="#">Graphic Designers</a></li>
                             <li><a href="#">Branding</a></li>
-                        </ul>
-                    </li>-->
+                        </ul>-->
+
 
                     <li><a href="#">FAQ</a></li>
 
@@ -144,7 +145,8 @@
                     <nobr><!--leave this here for now -->
                       <a href="<?php echo $html->url('/');?>">Home</a>
                     <a href="<?php echo $html->url('/pages/about');?>">About Evrica</a>
-                    <a href="">Find Events</a>
+                      <a href="<?php echo $html->url('/pages/about');?>">Services</a>
+                     <a href="">Find Events</a>
                     
                     <a href="">FAQ</a>
                     <a href="">Contact Us</a>

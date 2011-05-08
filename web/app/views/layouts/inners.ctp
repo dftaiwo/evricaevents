@@ -58,7 +58,8 @@ function MM_preloadImages() { //v3.0
                     <li><a href="<?php echo $this->Html->url('/'); ?>">Home</a></li>
 
                     <li><a href="<?php echo $html->url('/pages/about');?>">About Evrica</a></li>
-
+ <li><a href="<?php echo $html->url('/pages/about');?>">Services</a>
+                    </li>
                     <li><a href="#">Find Events</a></li>
 
                     <!--<li><a href="#">Services</a>
@@ -103,6 +104,8 @@ function MM_preloadImages() { //v3.0
                 <div class="siteinfo">
                     <a href="<?php echo $this->Html->url('/');?>">Home</a>
                     <a href="<?php echo $this->Html->url('/pages/about');?>">About Evrica</a>
+                     <a href="<?php echo $html->url('/pages/about');?>">Services</a>
+
                     <a href="">Find Events</a>
                     
                     <a href="">FAQ</a>
