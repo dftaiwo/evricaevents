@@ -46,7 +46,7 @@ class ManageEventsController extends AppController {
         $states = $this->Event->State->find('list');
         $users = $this->Event->User->find('list');
         $countries = $this->Event->State->Country->find('list');
-        $categories = $this->Event->Category->find('list');
+        $categories = $this->Event->Category->getMainCategories();
         $tags = $this->Event->Tag->find('list');
         $this->set(compact('states', 'users', 'categories', 'tags', 'countries'));
 
