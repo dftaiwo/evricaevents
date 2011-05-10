@@ -13,7 +13,6 @@ body {
 	background:url(../img/bg_img.png) repeat-x;
 }
 
-
 .container{
 	background:#fff;
 	margin:10px auto -40px auto;
@@ -182,9 +181,6 @@ body {
 }
 
 
-.evtName a:link, .evtName a:visited{
-    color:#333;
-}
 
 .note:before {
     content:"";
@@ -736,3 +732,159 @@ label{
 }
 
 
+
+
+
+
+.leftside{
+	 padding:10px;
+	 height:auto;
+	 width:45%;
+	 float:left;
+}
+
+.leftside li{
+	margin-left:-30px;
+	padding:5px;
+	list-style:none;
+	border-bottom:1px dotted #09F;
+	cursor:pointer;
+}
+
+.leftside li:hover{
+	background:#45afd6;
+	margin-left:-25px;
+}
+
+.rightside{
+	 float: left;
+	 margin: 0px 0px 0px 0px;
+	 padding:10px;
+	 height:auto;
+	 width:45%;
+	 display: inline;
+}
+
+.rightside li{
+	margin-left:-40px;
+	padding:5px;
+	list-style:none;
+	border-bottom:1px dotted #09F;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+
+
+.rightside li:hover{
+	background:#fbfbfb;
+	color:#333;
+	border:none;
+}
+
+.centerside{
+	 margin: 0px 0px 0px 0px;
+	 padding:5px;
+	 height: auto;
+	 width:32%;
+	 float:left;
+}
+.centerside a:link{
+	text-decoration:none;
+	color:#f0f0f0;
+}
+
+.centerside a:hover{
+	color:#fff;
+}
+
+.centerside a:visited{
+	text-decoration:none;
+	color:#f0f0f0;
+}
+
+
+.listcountry{
+	padding:5px;
+	margin:10px auto;
+	width:95%;
+}
+
+.listC{
+	 margin: 0px -20px 0px 0px;
+	 padding:5px;
+	 height: auto;
+	 width:10%;
+	 float:left;
+}
+.listC a:link{
+	text-decoration:none;
+	color:#f0f0f0;
+}
+
+.listC a:hover{
+	color:#fff;
+}
+
+.listC a:visited{
+	text-decoration:none;
+	color:#f0f0f0;
+}
+
+.listRn{
+	width:62%;
+	padding:5px;
+	float:right;
+	margin-left:-30;
+}
+
+.listRL{
+	width:53%;
+	padding:5px;
+	float:right;
+	margin-left:-30;
+}
+
+.listR{
+	width:32%;
+	padding:5px;
+	float:right;
+}
+
+.listRs{
+	width:60%;
+	padding:5px;
+	float:right;
+}
+
+.listL{
+	width:33%;
+	padding:5px;
+	float:left;
+}
+
+.listLB{
+	width:30%;
+	padding:5px;
+	float:left;
+}
+
+.listcountry a{
+	text-decoration:none;
+	color:#fff;	
+	display:block;
+}
+
+.listcountry a:hover{
+	text-decoration:underline;
+}
+
+.listcountry a:visited{
+	color:#fff;
+}
+
+
+
+.evtName a:link, .evtName a:visited{
+    color:#333;
+}

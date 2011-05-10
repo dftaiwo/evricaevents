@@ -8,6 +8,7 @@
 <?php 
     echo $this->Form->create('Search',array('url'=>'search')); 
     echo $this->Form->input('search');
+    echo $this->Form->submit();
     echo $this->Form->end(); 
 ?>
 <div class="alleventL">
@@ -27,7 +28,7 @@
              <?php echo $event['Event']['description']; ?>
 
                 <div class="publish">
-                	Published by &raquo; <?php echo $event['User']['firstname'].' '.$event['User']['lastname']; ?>
+                	Published by &raquo; <?php echo $event['Event']['event_company']; ?>
                     <label> Date &raquo; <?php echo date('M dS',strtotime($event['EvDate']['start_date'])); ?> <?php if($event['EvDate']['start_date']!=$event['EvDate']['end_date']){?> - <?php echo date('dS',strtotime($event['EvDate']['end_date'])); }?></label>
                     <div class="readmore">
                         <?php echo $this->Html->link('more +',"viewEvent/{$event['Event']['id']}"); ?>

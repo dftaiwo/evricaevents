@@ -74,9 +74,17 @@
             <div class="head">
                 <div class="logo">&nbsp;</div>
                 <div  class="sontwk">
+                    <?php if(!isset($userInfo)){ ?>
                     <div class="authsign">
 			<a href="<?php echo $html->url('/users/add')?>">Login</a> | <a href="<?php echo $html->url('/users/add')?>">Signup</a>
 		</div>
+                    <?php }else{
+                        ?>
+                    <?php echo $userInfo['User']['firstname']; ?> 
+                    <?php echo $userInfo['User']['lastname']; ?> | 
+                    	<a href="<?php echo $html->url('/Dashboard')?>">My Dashboard</a>  | 
+                    	<a href="<?php echo $html->url('/users/logout')?>">Logout</a> 
+                    <?php  } ?>
                     <div class="clear">&nbsp;</div>
                     <?php echo $this->Form->create('Search',array('url'=>'/Evrivents/search')); ?>
                     <label>
@@ -121,7 +129,7 @@
 
                 <div id="content">
 
-<?php echo $this->Session->flash(); ?>
+            <?php echo $this->Session->flash(); ?>
 
                     <?php echo $content_for_layout; ?>
                 </div>
@@ -141,7 +149,7 @@
                 <div class="clear">&nbsp;</div>
 </div>
 
-
+</div>
         <div class="footer">
             <div class="wrapfoot">
                 <div class="siteinfo">
@@ -150,10 +158,7 @@
                       <a href="<?php echo $html->url('/');?>">Home</a>
                     <a href="<?php echo $html->url('/pages/about');?>">About Evrica</a>
                       <a href="<?php echo $html->url('/pages/services');?>">Services</a>
-                     <a href="">Find Events</a>
-                    
                     <a href="">Find Events</a>
-                    <a href="<?php echo $html->url('/pages/services');?>">Services</a>
                     <a href="">FAQ</a>
                     <a href="">Contact Us</a>
     <?php echo $this->Html->link('Manage Events', "/ManageEvents/index"); ?>

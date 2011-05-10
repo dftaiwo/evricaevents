@@ -24,6 +24,7 @@ var $uses=array('User');
 
     function  beforeRender()
     {
-     
+     $user  = $this->Session->read('user');
+     $this->set('userInfo',$user);
     }
 }
